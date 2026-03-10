@@ -3,11 +3,12 @@ import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({super.key, this.icons, required this.text, required this.onTap,  this.color=AppColors.primary600, required this.backgroundClr});
+  const CustomElevatedButton({super.key, this.icons, required this.text, required this.onTap,  this.color=AppColors.primary600, required this.backgroundClr,  this.height=70});
   final IconData? icons;
   final String text;
   final VoidCallback onTap;
   final Color color,backgroundClr;
+  final double height;
 
 
   @override
@@ -15,7 +16,7 @@ class CustomElevatedButton extends StatelessWidget {
     return InkWell(
       onTap: onTap,
       child: Container(
-        height: 70,
+        height: height,
         width: double.infinity,
         decoration: BoxDecoration(
           color:backgroundClr ,

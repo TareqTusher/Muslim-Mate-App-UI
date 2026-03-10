@@ -12,4 +12,7 @@ static const String continu="Continue";
 static const String qibla="Locate \nQibla";
 static const String mosque="Find nearest \nMosque";
 static const String activityCheckList="Complete the daily activity checklist";
+static const String goToCheckList="Go to Checklist";
+static const String search="Search";
+
 }

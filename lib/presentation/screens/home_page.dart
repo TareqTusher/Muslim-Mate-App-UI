@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
-import 'package:muslim_mate/presentation/widgets/daily_activity.dart';
-import 'package:muslim_mate/presentation/widgets/last_read_section.dart';
-import 'package:muslim_mate/presentation/widgets/qibla_mosque_section.dart';
-import 'package:muslim_mate/presentation/widgets/top_header_section.dart';
+import 'package:muslim_mate/presentation/widgets/home_page/daily_activity.dart';
+import 'package:muslim_mate/presentation/widgets/home_page/last_read_section.dart';
+import 'package:muslim_mate/presentation/widgets/home_page/qibla_mosque_section.dart';
+import 'package:muslim_mate/presentation/widgets/home_page/top_header_section.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

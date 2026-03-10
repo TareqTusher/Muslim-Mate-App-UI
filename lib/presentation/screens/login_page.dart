@@ -20,6 +20,7 @@ class _LoginPageState extends State<LoginPage> {
     return SafeArea(
       top: false,
       child: Scaffold(
+        backgroundColor: AppColors.whiteColor,
         appBar: AppBar(leading: SizedBox()),
         body: SingleChildScrollView(
           child: Center(
