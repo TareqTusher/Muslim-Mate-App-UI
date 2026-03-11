@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
+import 'package:muslim_mate/core/styles/text_styles.dart';
+import 'package:muslim_mate/presentation/screens/article_page.dart';
+import 'package:muslim_mate/presentation/screens/discover_page.dart';
 
 class HorizontalRowSection extends StatefulWidget {
   const HorizontalRowSection({super.key});
@@ -15,22 +18,37 @@ class _HorizontalRowSectionState extends State<HorizontalRowSection> {
     Icons.book,
     Icons.inbox_outlined,
   ];
+
   List<String> text = ["Video", "Article", "Dua", "Law"];
+
   int selectedIndex = 0;
+
+  // ✅ pages list সঠিকভাবে define করা
+  late List<Widget> pages;
+
+  @override
+  void initState() {
+    super.initState();
+    pages = [
+      const DiscoverPage(),
+      const ArticlePage(),
+      const Center(child: Text("Dua Page")),
+      const Center(child: Text("Law Page")),
+    ];
+  }
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        shrinkWrap: true,
-        itemCount: 4,
-        itemBuilder: (context, index) {
-          return Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Padding(
+    return Column(
+      children: [
+        SizedBox(
+          height: 50,
+          child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            shrinkWrap: true,
+            itemCount: text.length,
+            itemBuilder: (context, index) {
+              return Padding(
                 padding: const EdgeInsets.only(right: 12.0),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(100),
@@ -51,17 +69,39 @@ class _HorizontalRowSectionState extends State<HorizontalRowSection> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(icons[index], color: AppColors.grey400),
-                        Text(text[index]),
+                        Icon(
+                          icons[index],
+                          color: selectedIndex == index
+                              ? AppColors.whiteColor
+                              : AppColors.grey400,
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          text[index],
+                          style: TextStyles.fontText14Regular(
+                            selectedIndex == index
+                                ? AppColors.whiteColor
+                                : AppColors.grey400,
+                          ),
+                        ),
                       ],
                     ),
                   ),
                 ),
-              ),
-            ],
-          );
-        },
-      ),
+              );
+            },
+          ),
+        ),
+
+        // ✅ IndexedStack ব্যবহার করলে page rebuild হবে না, state maintain থাকবে
+        SizedBox(
+          height: 30,
+          child: IndexedStack(
+            index: selectedIndex,
+            children: pages,
+          ),
+        ),
+      ],
     );
   }
 }
