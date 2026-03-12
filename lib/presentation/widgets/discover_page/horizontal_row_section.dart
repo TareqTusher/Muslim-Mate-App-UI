@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
-import 'package:muslim_mate/presentation/screens/article_page.dart';
-import 'package:muslim_mate/presentation/screens/discover_page.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/article_tab.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/dua_tab.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/law_tab.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/video_tab.dart';
 
 class HorizontalRowSection extends StatefulWidget {
   const HorizontalRowSection({super.key});
@@ -23,23 +25,23 @@ class _HorizontalRowSectionState extends State<HorizontalRowSection> {
 
   int selectedIndex = 0;
 
-  // ✅ pages list সঠিকভাবে define করা
   late List<Widget> pages;
 
   @override
   void initState() {
     super.initState();
     pages = [
-      const DiscoverPage(),
-      const ArticlePage(),
-      const Center(child: Text("Dua Page")),
-      const Center(child: Text("Law Page")),
+      const VideoTabContent(),          
+      const ArticleTabContent(),
+      const DuaTab(),
+      const LawTab(),
     ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
           height: 50,
@@ -93,9 +95,9 @@ class _HorizontalRowSectionState extends State<HorizontalRowSection> {
           ),
         ),
 
-        // ✅ IndexedStack ব্যবহার করলে page rebuild হবে না, state maintain থাকবে
-        SizedBox(
-          height: 30,
+        const SizedBox(height: 12),
+
+        IntrinsicHeight(
           child: IndexedStack(
             index: selectedIndex,
             children: pages,
@@ -105,3 +107,4 @@ class _HorizontalRowSectionState extends State<HorizontalRowSection> {
     );
   }
 }
+

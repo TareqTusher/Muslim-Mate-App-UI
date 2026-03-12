@@ -2,6 +2,11 @@
 import 'package:go_router/go_router.dart';
 import 'package:muslim_mate/core/router/app_routes.dart';
 import 'package:muslim_mate/core/common_components/common_bottom_nav.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/article_description.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/article_tab.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/dua_tab.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/family_description.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/family_page.dart';
 import 'package:muslim_mate/presentation/screens/login_page.dart';
 import 'package:muslim_mate/presentation/screens/splash_screen.dart';
 
@@ -27,7 +32,36 @@ GoRoute(
       name: AppRoutesName.homePage,
       pageBuilder: (context, state) => NoTransitionPage(child: CommonBottonNav()),
     ),
-  
+  GoRoute(
+      path: AppRoutesPath.articleDesc,
 
+      name: AppRoutesName.articleDesc,
+      pageBuilder: (context, state) => NoTransitionPage(child: ArticleDescription()),
+    ),
+  GoRoute(
+      path: AppRoutesPath.familyPage,
+
+      name: AppRoutesName.familyPage,
+      pageBuilder: (context, state) => NoTransitionPage(child: FamilyPage()),
+    ),
+      GoRoute(
+      path: AppRoutesPath.articleTab,
+
+      name: AppRoutesName.articleTab,
+      pageBuilder: (context, state) => NoTransitionPage(child: ArticleTabContent()),
+    ),
+
+    GoRoute(
+      path: AppRoutesPath.familyDescription,
+
+      name: AppRoutesName.familyDescription,
+      pageBuilder: (context, state) => NoTransitionPage(child: FamilyDescription()),
+    ),
+GoRoute(
+      path: AppRoutesPath.duaTab,
+
+      name: AppRoutesName.duaTab,
+      pageBuilder: (context, state) => NoTransitionPage(child: DuaTab()),
+    ),
   ],
 );

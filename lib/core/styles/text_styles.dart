@@ -10,7 +10,10 @@ class TextStyles {
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w500,fontSize: 14);
 
 }
+  static  TextStyle fontText14SemiBold (Color color){
+  return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w600,fontSize: 14);
 
+}
  static  TextStyle fontText16Medium (Color color){
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w500,fontSize: 16);
 
@@ -24,8 +27,10 @@ class TextStyles {
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w500,fontSize: 20);
 
 }
+ static  TextStyle fontText20SemiBold (Color color){
+  return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w600,fontSize: 20);
 
-
+}
  static  TextStyle fontText24Medium (Color color){
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w500,fontSize: 24);
 
