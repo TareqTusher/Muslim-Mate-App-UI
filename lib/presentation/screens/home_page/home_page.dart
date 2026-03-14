@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/presentation/widgets/home_page/daily_activity.dart';
 import 'package:muslim_mate/presentation/widgets/home_page/last_read_section.dart';
@@ -18,13 +17,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
-      appBar: AppBar(
-        leading: const SizedBox(),
-        backgroundColor: AppColors.primary600,
-        systemOverlayStyle: const SystemUiOverlayStyle(
-          statusBarIconBrightness: Brightness.light,
-        ),
-      ),
+     
 
       body: SingleChildScrollView(
         child: Stack(

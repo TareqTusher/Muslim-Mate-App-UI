@@ -7,6 +7,9 @@ static const articleTab="/articleTab";
 static const familyPage="/familyPage";
 static const familyDescription="/familyDescription";
 static const duaTab="/duatab";
+static const lawTab="/lawtab";
+static const lawDesription="/lawDescription";
+static const lawTitle="/lawTitle";
 }
 
 class AppRoutesName {
@@ -18,4 +21,8 @@ static const articleTab="articleTab";
 static const familyPage="familyPage";
 static const familyDescription="familyDescription";
 static const duaTab="duaTab";
+static const lawTab="lawtab";
+static const lawDesription="lawDescription";
+static const lawTitle="lawTitle";
+
 }

@@ -27,145 +27,154 @@ class _TopHeaderSectionState extends State<TopHeaderSection> {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 300,
-      width: double.infinity,
-      color: AppColors.primary600,
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            /// TIME + DATE
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      selectedTime != null
-                          ? "${selectedTime!.hour}:${selectedTime!.minute}"
-                          : "14:01",
-                      style: TextStyles.fontText24Medium(AppColors.whiteColor),
-                    ),
+  
 
-                    Row(
-                      children: [
-                        InkWell(
-                          onTap: () {
-                            pickTime();
-                          },
-                          child: Icon(
-                            Icons.alarm,
-                            size: 16,
-                            color: AppColors.whiteColor,
+  return SizedBox(
+    height: 300,
+    width: double.infinity,
+    child: Stack(
+      children: [
+
+        Positioned.fill(
+          child: Image.asset(
+            "assets/images/ramadan4.png",
+            fit: BoxFit.fill,
+          ),
+        ),
+
+        Positioned.fill(
+          child: Container(
+            color: AppColors.primary600.withValues(alpha:  .85),
+          ),
+        ),
+
+        Padding(
+          padding: const EdgeInsets.all(16),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        selectedTime != null
+                            ? "${selectedTime!.hour}:${selectedTime!.minute}"
+                            : "14:01",
+                        style: TextStyles.fontText24Medium(
+                            AppColors.whiteColor),
+                      ),
+
+                      Row(
+                        children: [
+                          InkWell(
+                            onTap: pickTime,
+                            child: const Icon(
+                              Icons.alarm,
+                              size: 16,
+                              color: Colors.white,
+                            ),
                           ),
-                        ),
 
-                        const SizedBox(width: 4),
+                          const SizedBox(width: 4),
 
-                        Text(
-                          "Ashr in ",
-                          style: TextStyles.fontText14Regular(
-                            AppColors.whiteColor,
+                          Text(
+                            "Ashr in ",
+                            style: TextStyles.fontText14Regular(
+                                AppColors.whiteColor),
                           ),
-                        ),
 
-                        Text(
-                          "01:08:59",
-                          style: TextStyles.fontText14Regular(
-                            AppColors.whiteColor,
+                          Text(
+                            "01:08:59",
+                            style: TextStyles.fontText14Regular(
+                                AppColors.whiteColor),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                        ],
+                      ),
+                    ],
+                  ),
 
-                Column(
-                  children: [
-                    Text(
-                      "10 Ramadhan 1446H",
-                      style: TextStyles.fontText14Medium(AppColors.whiteColor),
-                    ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        "10 Ramadhan 1446H",
+                        style: TextStyles.fontText14Medium(
+                            AppColors.whiteColor),
+                      ),
 
-                    const SizedBox(height: 6),
+                      const SizedBox(height: 6),
 
-                    InkWell(
-                      onTap: () {},
-                      child: Container(
-                        height: 40,
-                        width: 200,
+                      Container(
+                        height: 36,
+                        padding: const EdgeInsets.symmetric(horizontal: 12),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(30),
-                          color: Colors.white.withValues(alpha: .2),
+                          color: Colors.white.withValues (alpha: .2),
                         ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(8),
-                          child: Row(
-                            children: [
-                              Icon(
-                                Icons.location_pin,
-                                size: 12,
-                                color: AppColors.whiteColor,
-                              ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: const [
+                            Icon(Icons.location_pin,
+                                size: 14, color: Colors.white),
 
-                              const SizedBox(width: 6),
+                            SizedBox(width: 6),
 
-                              Expanded(
-                                child: Text(
-                                  "Sumedang, West Java",
-                                  style: TextStyles.fontText16Regular(
-                                    AppColors.whiteColor,
-                                  ),
-                                  overflow: TextOverflow.ellipsis,
-                                ),
+                            Text(
+                              "Sumedang, West Java",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13,
                               ),
+                            ),
 
-                              Icon(
-                                Icons.arrow_right,
-                                color: AppColors.whiteColor,
-                                size: 14,
-                              ),
-                            ],
-                          ),
+                            SizedBox(width: 6),
+
+                            Icon(Icons.chevron_right,
+                                size: 16, color: Colors.white),
+                          ],
                         ),
                       ),
+                    ],
+                  ),
+                ],
+              ),
+
+              const SizedBox(height: 30),
+
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  prayerItem("Subuh", "04:37"),
+                  prayerItem("Fajr", "05:50"),
+
+                  Container(
+                    padding: const EdgeInsets.symmetric(
+                      horizontal: 14,
+                      vertical: 10,
                     ),
-                  ],
-                ),
-              ],
-            ),
-
-            const SizedBox(height: 30),
-
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                prayerItem("Subuh", "04:37"),
-                prayerItem("Fajr", "05:50"),
-
-                Container(
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 12,
-                    vertical: 8,
+                    decoration: BoxDecoration(
+                      color: Colors.white.withAlpha(1 ),
+                      borderRadius: BorderRadius.circular(16),
+                    ),
+                    child: prayerItem("Dzuhur", "12:05"),
                   ),
-                  decoration: BoxDecoration(
-                    color: Colors.white.withValues(alpha: .2),
-                    borderRadius: BorderRadius.circular(16),
-                  ),
-                  child: prayerItem("Dzuhur", "12:05"),
-                ),
 
-                prayerItem("Ashr", "15:10"),
-                prayerItem("Maghrib", "18:13"),
-              ],
-            ),
-          ],
+                  prayerItem("Ashr", "15:10"),
+                  prayerItem("Maghrib", "18:13"),
+                ],
+              ),
+            ],
+          ),
         ),
-      ),
-    );
+      ],
+    ),
+  );
+
   }
 
   Widget prayerItem(String name, String time) {

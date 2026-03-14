@@ -1,4 +1,3 @@
-
 import 'package:go_router/go_router.dart';
 import 'package:muslim_mate/core/router/app_routes.dart';
 import 'package:muslim_mate/core/common_components/common_bottom_nav.dart';
@@ -7,6 +6,9 @@ import 'package:muslim_mate/presentation/screens/discover_page/article_tab.dart'
 import 'package:muslim_mate/presentation/screens/discover_page/dua_tab.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/family_description.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/family_page.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/law_description.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/law_tab.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/law_title.dart';
 import 'package:muslim_mate/presentation/screens/login_page.dart';
 import 'package:muslim_mate/presentation/screens/splash_screen.dart';
 
@@ -18,50 +20,79 @@ GoRouter router = GoRouter(
       name: AppRoutesName.splashScreen,
       pageBuilder: (context, state) => NoTransitionPage(child: SplashScreen()),
     ),
- 
- GoRoute(
+
+    GoRoute(
       path: AppRoutesPath.logInPage,
 
       name: AppRoutesName.logInPage,
       pageBuilder: (context, state) => NoTransitionPage(child: LoginPage()),
     ),
-  
-GoRoute(
+
+    GoRoute(
       path: AppRoutesPath.homePage,
 
       name: AppRoutesName.homePage,
-      pageBuilder: (context, state) => NoTransitionPage(child: CommonBottonNav()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: CommonBottonNav()),
     ),
-  GoRoute(
+    GoRoute(
       path: AppRoutesPath.articleDesc,
 
       name: AppRoutesName.articleDesc,
-      pageBuilder: (context, state) => NoTransitionPage(child: ArticleDescription()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: ArticleDescription()),
     ),
-  GoRoute(
+    GoRoute(
       path: AppRoutesPath.familyPage,
 
       name: AppRoutesName.familyPage,
       pageBuilder: (context, state) => NoTransitionPage(child: FamilyPage()),
     ),
-      GoRoute(
+    GoRoute(
       path: AppRoutesPath.articleTab,
 
       name: AppRoutesName.articleTab,
-      pageBuilder: (context, state) => NoTransitionPage(child: ArticleTabContent()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: ArticleTabContent()),
     ),
 
     GoRoute(
       path: AppRoutesPath.familyDescription,
 
       name: AppRoutesName.familyDescription,
-      pageBuilder: (context, state) => NoTransitionPage(child: FamilyDescription()),
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: FamilyDescription()),
     ),
-GoRoute(
+    GoRoute(
       path: AppRoutesPath.duaTab,
 
       name: AppRoutesName.duaTab,
       pageBuilder: (context, state) => NoTransitionPage(child: DuaTab()),
+    ),
+
+    GoRoute(
+      path: AppRoutesPath.lawTab,
+
+      name: AppRoutesName.lawTab,
+      pageBuilder: (context, state) => NoTransitionPage(child: LawTab()),
+    ),
+    GoRoute(
+      path: AppRoutesPath.lawDesription,
+      builder: (context, state) {
+        final extra = state.extra as Map<String, dynamic>;
+        return LawDescription(
+          text: extra['title'],
+          icons: extra['icon'],
+          subTitleText: extra['laws'],
+        );
+      },
+    ),
+
+    GoRoute(
+      path: AppRoutesPath.lawTitle,
+
+      name: AppRoutesName.lawTitle,
+      pageBuilder: (context, state) => NoTransitionPage(child: LawTitle()),
     ),
   ],
 );

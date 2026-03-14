@@ -21,7 +21,10 @@ class _LoginPageState extends State<LoginPage> {
       top: false,
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
-        appBar: AppBar(leading: SizedBox()),
+        appBar: AppBar(
+          
+          backgroundColor: AppColors.whiteColor,
+          leading: SizedBox()),
         body: SingleChildScrollView(
           child: Center(
             child: Padding(
