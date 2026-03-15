@@ -9,6 +9,7 @@ import 'package:muslim_mate/presentation/screens/discover_page/family_page.dart'
 import 'package:muslim_mate/presentation/screens/discover_page/law_description.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/law_tab.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/law_title.dart';
+import 'package:muslim_mate/presentation/screens/discover_page/law_to_business.dart';
 import 'package:muslim_mate/presentation/screens/login_page.dart';
 import 'package:muslim_mate/presentation/screens/splash_screen.dart';
 
@@ -93,6 +94,13 @@ GoRouter router = GoRouter(
 
       name: AppRoutesName.lawTitle,
       pageBuilder: (context, state) => NoTransitionPage(child: LawTitle()),
+    ),
+    GoRoute(
+      path: AppRoutesPath.lawToBusiness,
+
+      name: AppRoutesName.lawToBusiness,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: LawToBusinesspage()),
     ),
   ],
 );

@@ -26,4 +26,13 @@ class Strings {
     static const String business="Business";
     static const String travel="Travel";
     static const String dhikr="Dhikr";
+    static const String arabic="اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِیْنَۙ (1) الرَّحْمٰنِ الرَّحِیْمِۙ (2) مٰلِكِ یَوْمِ الدِّیْنِﭤ(3) اِیَّاكَ نَعْبُدُ وَ اِیَّاكَ نَسْتَعِیْنُﭤ(4)";
+   
+   static const String usury="Usury, known as Riba in Islam, is strictly prohibited (Haram) and considered a major sin in the Quran and Hadith. It refers to any unjust, exploitative increase in borrowing or trade, covering both exorbitant usury and modern interest-based banking. Prohibited to ensure economic justice and prevent the exploitation of the poor, it is believed to cause social inequality";
+    static const String definationOfUsury="Defination of Usury";
+    static const String usuryDesc="The word used for 'interest' in the Quran is Ar-Riba, an Arabic word which means 'excess.' In Sharee`ah (Islamic Law), it is the measure of excess in one thing when two things are exchanged in some bargain; or in the case of a loan, an increased amount of the loan at the time of its payment.In Islam, dealing with Riba is one of the major sins, which entail severe punishment by Allah Almighty. Allah, the Exalted, Says (what means)";
+    static const String legalBasicofUsury="Legal Basic of Ususry";
+    static const String basicDescription="The reason for such severity in the matter of interest is that Islam wants to create a society that is founded on fraternity, sympathy, selflessness and sacrifice. If someone is in need of money, the rich should fulfill his needs for the sake of Allah's Pleasure or give him a loan without interest. As against the Islamic system, this system of interest is based on selfishness, exploitation and suppression.In the interest-ridden societies, the affluent ones are not inclined to co-operate with the needy for the sake of Allah. All they are concerned with is their own interest";
+    
+    
     }

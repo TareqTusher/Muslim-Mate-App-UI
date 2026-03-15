@@ -10,6 +10,8 @@ static const duaTab="/duatab";
 static const lawTab="/lawtab";
 static const lawDesription="/lawDescription";
 static const lawTitle="/lawTitle";
+static const lawToBusiness="/lawToBusiness";
+
 }
 
 class AppRoutesName {
@@ -24,5 +26,6 @@ static const duaTab="duaTab";
 static const lawTab="lawtab";
 static const lawDesription="lawDescription";
 static const lawTitle="lawTitle";
+static const lawToBusiness="lawToBusiness";
 
 }

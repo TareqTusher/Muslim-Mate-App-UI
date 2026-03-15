@@ -6,7 +6,6 @@ import 'package:muslim_mate/presentation/screens/home_page/home_page.dart';
 import 'package:muslim_mate/presentation/screens/prayer_page.dart';
 import 'package:muslim_mate/presentation/screens/profile_page.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/quran_page.dart';
-import 'package:muslim_mate/presentation/widgets/discover_page/horizontal_row_section.dart';
 
 class CommonBottonNav extends StatefulWidget {
   const CommonBottonNav({super.key});

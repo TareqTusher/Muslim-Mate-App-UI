@@ -14,6 +14,15 @@ class TextStyles {
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w600,fontSize: 14);
 
 }
+
+
+
+ static  TextStyle fontText16SemiBold (Color color){
+  return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w600,fontSize: 16);
+
+}
+
+
  static  TextStyle fontText16Medium (Color color){
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w500,fontSize: 16);
 

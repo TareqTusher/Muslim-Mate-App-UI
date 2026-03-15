@@ -22,7 +22,7 @@ class LawDescription extends StatelessWidget {
       "Manners of Debt",
       "Usury Transactions",
       "Various Types of Halal Business",
-      "Manners of Debt",
+      "Characteristics of Halal and Haram Investments",
     ];
     return Scaffold(
       appBar: AppBar(
