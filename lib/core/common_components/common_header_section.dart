@@ -3,9 +3,13 @@ import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 
 class CommonHeaderContainerSection extends StatelessWidget {
-  const CommonHeaderContainerSection({super.key, required this.onTap,this.color=AppColors.grey50});
-final VoidCallback onTap;
-final Color color;
+  const CommonHeaderContainerSection({
+    super.key,
+    required this.onTap,
+    this.color = AppColors.grey50,
+  });
+  final VoidCallback onTap;
+  final Color color;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -36,7 +40,8 @@ final Color color;
           child: InkWell(
             borderRadius: BorderRadius.circular(30),
             onTap: onTap,
-            child: Icon(Icons.bookmark_outline)),
+            child: Icon(Icons.bookmark_outline),
+          ),
         ),
       ],
     );

@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:muslim_mate/core/router/app_routes.dart';
 import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
-import 'package:muslim_mate/core/common_components/hexagon_icon.dart';
+import 'package:muslim_mate/core/common_components/hexagon_clipper.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_mate/core/common_components/common_title_and_description.dart';
+import 'package:muslim_mate/core/router/app_routes.dart';
+import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
@@ -14,7 +16,10 @@ class LawToBusinesspage extends StatelessWidget {
         backgroundColor: AppColors.whiteColor,
         leading: InkWell(
           hoverColor: AppColors.whiteColor,
-          onTap: () {},
+          onTap: () {
+
+            router.push(AppRoutesPath.lawDesription);
+          },
           child: Icon(Icons.chevron_left, size: 30, color: AppColors.grey400),
         ),
 

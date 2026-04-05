@@ -18,19 +18,17 @@ class DiscoverPage extends StatelessWidget {
           child: Column(
             children: [
               Align(
-
                 alignment: Alignment.centerLeft,
                 child: Text(
                   Strings.discover,
                   style: TextStyles.fontText20SemiBold(AppColors.blackColor),
                 ),
               ),
-              SizedBox(height: 12,),
+              SizedBox(height: 12),
               CommonHeaderContainerSection(
                 color: AppColors.primary600,
-                onTap: () {
-                
-              },),
+                onTap: () {},
+              ),
               const SizedBox(height: 12),
               HorizontalRowSection(),
             ],

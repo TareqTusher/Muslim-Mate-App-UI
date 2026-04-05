@@ -2,6 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TextStyles {
+
+  static  TextStyle fontText12Regular (Color color){
+  return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w400,fontSize: 12);
+
+}
+
   static  TextStyle fontText14Regular (Color color){
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w400,fontSize: 14);
 
@@ -14,7 +20,10 @@ class TextStyles {
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w600,fontSize: 14);
 
 }
+  static  TextStyle fontText14Bold (Color color){
+  return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w700,fontSize: 14);
 
+}
 
 
  static  TextStyle fontText16SemiBold (Color color){

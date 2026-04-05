@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_mate/core/common_components/custom_elevated_button.dart';
-import 'package:muslim_mate/core/common_components/hexagon_icon.dart';
+import 'package:muslim_mate/core/common_components/hexagon_clipper.dart';
 import 'package:muslim_mate/core/router/app_routes.dart';
 import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
