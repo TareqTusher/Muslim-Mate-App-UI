@@ -14,10 +14,10 @@ class SurahTab extends StatelessWidget {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8),
           child: InkWell(
-hoverColor: AppColors.whiteColor,
-focusColor: AppColors.whiteColor,
-highlightColor: AppColors.whiteColor,
-splashColor: AppColors.whiteColor,
+            hoverColor: AppColors.whiteColor,
+            focusColor: AppColors.whiteColor,
+            highlightColor: AppColors.whiteColor,
+            splashColor: AppColors.whiteColor,
             onTap: () {},
             child: Row(
               children: [
@@ -37,17 +37,15 @@ splashColor: AppColors.whiteColor,
                     ),
                   ),
                 ),
-            
+
                 const SizedBox(width: 10),
-            
+
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       "Surah Name",
-                      style: TextStyles.fontText14Bold(
-                        AppColors.blackColor,
-                      ),
+                      style: TextStyles.fontText14Bold(AppColors.blackColor),
                     ),
                     const SizedBox(height: 4),
                     Row(
