@@ -1,3 +1,4 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
@@ -9,34 +10,40 @@ class ToptabselectorWidget extends StatefulWidget {
   const ToptabselectorWidget({super.key});
 
   @override
-  State<ToptabselectorWidget> createState() => _ToptabselectorWidgetState();
+  State<ToptabselectorWidget> createState() =>
+      _ToptabselectorWidgetState();
 }
 
 class _ToptabselectorWidgetState extends State<ToptabselectorWidget> {
   int selectedIndex = 0;
-  List<String> text = ["Surah", "juz", "Last Read"];
-  late List<Widget> pages = [];
+
+  final List<String> text = ["Surah", "Juz", "Last Read"];
+
+  late final List<Widget> pages;
 
   @override
   void initState() {
     super.initState();
-    pages = [SurahTab(), JuzTab(), LastReadTab()];
+    pages = const [
+      SurahTab(),
+      JuzTab(),
+      LastReadTab(),
+    ];
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
+        /// 🔹 TAB BUTTONS
         SizedBox(
-          width: double.infinity,
           height: 40,
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            shrinkWrap: true,
             itemCount: text.length,
             itemBuilder: (context, index) {
               return Padding(
-                padding: const EdgeInsets.only(right: 12.0),
+                padding: const EdgeInsets.only(right: 12),
                 child: InkWell(
                   borderRadius: BorderRadius.circular(100),
                   onTap: () {
@@ -45,25 +52,22 @@ class _ToptabselectorWidgetState extends State<ToptabselectorWidget> {
                     });
                   },
                   child: Container(
-                    width: MediaQuery.sizeOf(context).width * 0.294,
+                    width: MediaQuery.sizeOf(context).width * 0.28,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(100),
                       color: selectedIndex == index
                           ? AppColors.primary600
                           : AppColors.grey400.withValues(alpha: 0.1),
                     ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          text[index],
-                          style: TextStyles.fontText14Regular(
-                            selectedIndex == index
-                                ? AppColors.whiteColor
-                                : AppColors.grey400,
-                          ),
+                    child: Center(
+                      child: Text(
+                        text[index],
+                        style: TextStyles.fontText14Regular(
+                          selectedIndex == index
+                              ? AppColors.whiteColor
+                              : AppColors.grey400,
                         ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
@@ -72,7 +76,9 @@ class _ToptabselectorWidgetState extends State<ToptabselectorWidget> {
           ),
         ),
 
-            IntrinsicHeight(
+        const SizedBox(height: 12),
+
+        Expanded(
           child: IndexedStack(
             index: selectedIndex,
             children: pages,
