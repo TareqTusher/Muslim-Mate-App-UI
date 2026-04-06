@@ -3,7 +3,7 @@ import 'package:muslim_mate/core/common_components/common_header_section.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
-import 'package:muslim_mate/presentation/widgets/quran_page/TopTabSelector.dart';
+import 'package:muslim_mate/presentation/widgets/quran_page/top_tab_selector.dart';
 
 class QuranPage extends StatelessWidget {
   const QuranPage({super.key});

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_mate/core/common_components/hexagon_clipper.dart';
+import 'package:muslim_mate/core/router/app_routes.dart';
+import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 
@@ -18,7 +20,9 @@ class SurahTab extends StatelessWidget {
             focusColor: AppColors.whiteColor,
             highlightColor: AppColors.whiteColor,
             splashColor: AppColors.whiteColor,
-            onTap: () {},
+            onTap: () {
+              router.push(AppRoutesPath.quranPageSuraTab);
+            },
             child: Row(
               children: [
                 ClipPath(

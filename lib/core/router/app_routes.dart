@@ -11,6 +11,7 @@ static const lawTab="/lawtab";
 static const lawDesription="/lawDescription";
 static const lawTitle="/lawTitle";
 static const lawToBusiness="/lawToBusiness";
+static const quranPageSuraTab="/quranPageSuraTab1";
 
 }
 
@@ -27,5 +28,6 @@ static const lawTab="lawtab";
 static const lawDesription="lawDescription";
 static const lawTitle="lawTitle";
 static const lawToBusiness="lawToBusiness";
+static const quranPageSuraTab="quranPageSuraTab1";
 
 }
