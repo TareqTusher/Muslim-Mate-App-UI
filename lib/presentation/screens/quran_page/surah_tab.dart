@@ -13,57 +13,64 @@ class SurahTab extends StatelessWidget {
       itemBuilder: (context, index) {
         return Padding(
           padding: const EdgeInsets.symmetric(vertical: 8),
-          child: Row(
-            children: [
-              ClipPath(
-                clipper: HexagonClipper(),
-                child: Container(
-                  width: 30,
-                  height: 34,
-                  color: AppColors.primary600,
-                  child: Center(
-                    child: Text(
-                      "${index + 1}",
-                      style: TextStyles.fontText14Medium(
-                        AppColors.whiteColor,
+          child: InkWell(
+hoverColor: AppColors.whiteColor,
+focusColor: AppColors.whiteColor,
+highlightColor: AppColors.whiteColor,
+splashColor: AppColors.whiteColor,
+            onTap: () {},
+            child: Row(
+              children: [
+                ClipPath(
+                  clipper: HexagonClipper(),
+                  child: Container(
+                    width: 30,
+                    height: 34,
+                    color: AppColors.primary600,
+                    child: Center(
+                      child: Text(
+                        "${index + 1}",
+                        style: TextStyles.fontText14Medium(
+                          AppColors.whiteColor,
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-
-              const SizedBox(width: 10),
-
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Surah Name",
-                    style: TextStyles.fontText14Bold(
-                      AppColors.blackColor,
+            
+                const SizedBox(width: 10),
+            
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      "Surah Name",
+                      style: TextStyles.fontText14Bold(
+                        AppColors.blackColor,
+                      ),
                     ),
-                  ),
-                  const SizedBox(height: 4),
-                  Row(
-                    children: [
-                      Text(
-                        "Makki",
-                        style: TextStyles.fontText12Regular(
-                          AppColors.blackColor,
+                    const SizedBox(height: 4),
+                    Row(
+                      children: [
+                        Text(
+                          "Makki",
+                          style: TextStyles.fontText12Regular(
+                            AppColors.blackColor,
+                          ),
                         ),
-                      ),
-                      const SizedBox(width: 12),
-                      Text(
-                        "286 Ayah",
-                        style: TextStyles.fontText12Regular(
-                          AppColors.blackColor,
+                        const SizedBox(width: 12),
+                        Text(
+                          "286 Ayah",
+                          style: TextStyles.fontText12Regular(
+                            AppColors.blackColor,
+                          ),
                         ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         );
       },
