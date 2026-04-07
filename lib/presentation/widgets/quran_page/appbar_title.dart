@@ -52,7 +52,7 @@ class AppbarTitle extends StatelessWidget {
               hoverColor: AppColors.whiteColor,
               highlightColor: AppColors.whiteColor,
               onTap: () {
-               CommonModalBottomSheet.show(context: context,title: "dfdf" );
+               CommonModalBottomSheet.show(context: context,title: "dfdf", widget: Column() );
               },
 
               child: Icon(

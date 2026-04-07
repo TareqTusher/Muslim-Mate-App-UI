@@ -4,7 +4,7 @@ import 'package:muslim_mate/core/styles/text_styles.dart';
 
 class CommonModalBottomSheet {
   
-  static void show( { required BuildContext context,String? title,buttonText, Widget? widget,IconData? icon,String? cancel}) {
+  static void show( { required BuildContext context,String? title,buttonText, required Widget widget,IconData? icon,String? cancel}) {
     
     showModalBottomSheet(
       
@@ -43,7 +43,7 @@ class CommonModalBottomSheet {
                   ),
                 ),
                 SizedBox(height: 16),
-                widget!,
+                widget,
                 // Row(
                 //   children: [
                 //     Expanded(
