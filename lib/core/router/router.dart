@@ -11,6 +11,7 @@ import 'package:muslim_mate/presentation/screens/discover_page/law_tab.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/law_title.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/law_to_business.dart';
 import 'package:muslim_mate/presentation/screens/login_page.dart';
+import 'package:muslim_mate/presentation/screens/quran_page/surah_tab.dart';
 import 'package:muslim_mate/presentation/screens/splash_screen.dart';
 import 'package:muslim_mate/presentation/widgets/quran_page/details_surah.dart';
 
@@ -115,6 +116,12 @@ GoRouter router = GoRouter(
       pageBuilder: (context, state) =>
           NoTransitionPage(child: DetailsSurahWidget()),
     ),
+ GoRoute(
+      path: AppRoutesPath.suraTab,
 
+      name: AppRoutesName.suraTab,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: SurahTab()),
+    ),
   ],
 );

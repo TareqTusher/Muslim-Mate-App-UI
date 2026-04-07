@@ -64,7 +64,7 @@ class SurahTab extends StatelessWidget {
                         Text(
                           "286 Ayah",
                           style: TextStyles.fontText12Regular(
-                            AppColors.blackColor,
+                            AppColors.grey500,
                           ),
                         ),
                       ],
