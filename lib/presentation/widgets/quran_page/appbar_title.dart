@@ -52,7 +52,56 @@ class AppbarTitle extends StatelessWidget {
               hoverColor: AppColors.whiteColor,
               highlightColor: AppColors.whiteColor,
               onTap: () {
-               CommonModalBottomSheet.show(context: context,title: "dfdf", widget: Column() );
+               CommonModalBottomSheet.show(context: context,title: "dfdf", children:          
+                 Row(
+                  children: [
+                    Expanded(
+                      child: DropdownButtonFormField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          suffixIcon: Icon(Icons.expand_more),
+                          fillColor: AppColors.grey100,
+                          labelText: "Surah",
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(12),
+                            borderSide: BorderSide.none,
+                          ),
+                        ),
+                        items: ["1. Surah"]
+                            .map((e) => DropdownMenuItem(
+                                  value: e,
+                                  child: Text(e),
+                                ))
+                            .toList(),
+                        onChanged: (v) {},
+                      ),
+                    ),
+                    SizedBox(width: 10),
+                    Expanded(
+                      child: DropdownButtonFormField(
+                        decoration: InputDecoration(
+                          filled: true,
+                          fillColor: AppColors.grey100,
+                          labelText: "Ayah",
+                          suffixIcon: Icon(Icons.expand_more),
+                          border: OutlineInputBorder(
+                            borderSide: BorderSide.none,
+                            borderRadius: BorderRadius.circular(12),
+                          ),
+                        ),
+                        items: ["1", "2"]
+                            .map((e) => DropdownMenuItem(
+                                  value: e,
+                                  child: Text(e),
+                                ))
+                            .toList(),
+                        onChanged: (v) {},
+                      ),
+                    ),
+                  ],
+                ),
+               
+               );
               },
 
               child: Icon(

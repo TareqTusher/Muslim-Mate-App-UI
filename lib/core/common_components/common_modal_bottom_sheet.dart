@@ -4,7 +4,7 @@ import 'package:muslim_mate/core/styles/text_styles.dart';
 
 class CommonModalBottomSheet {
   
-  static void show( { required BuildContext context,String? title,buttonText, required Widget widget,IconData? icon,String? cancel}) {
+  static void show( { required BuildContext context,String? title, String?buttonText, required Widget children,IconData? icon,String? cancel}) {
     
     showModalBottomSheet(
       
@@ -37,13 +37,13 @@ class CommonModalBottomSheet {
                   ),
                 ),
                 Text(
-                  title.toString(),
+                  title??"",
                   style: TextStyles.fontText16SemiBold(
                     AppColors.blackColor,
                   ),
                 ),
                 SizedBox(height: 16),
-                widget,
+                children,
                 // Row(
                 //   children: [
                 //     Expanded(
@@ -106,7 +106,7 @@ class CommonModalBottomSheet {
                       backgroundColor: AppColors.primary600,
                     ),
                     child:icon==null? Text(
-                      buttonText,
+                      buttonText??"",
                       style: TextStyles.fontText14Medium(
                         AppColors.whiteColor,
                       ),
@@ -114,7 +114,7 @@ class CommonModalBottomSheet {
                           Icon(icon,size: 24,color: AppColors.whiteColor,),
                           SizedBox(width: 8,),
                           Text(
-                      buttonText,
+                      buttonText??"",
                       style: TextStyles.fontText14Medium(
                         AppColors.whiteColor,
                       ),
@@ -133,7 +133,7 @@ class CommonModalBottomSheet {
                         backgroundColor: AppColors.primary600,
                       ),
                       child: Text(
-                        buttonText,
+                        buttonText??"",
                         style: TextStyles.fontText14Medium(
                           AppColors.whiteColor,
                         ),
@@ -151,7 +151,7 @@ class CommonModalBottomSheet {
                         backgroundColor: AppColors.primary600,
                       ),
                       child: Text(
-                        cancel,
+                        cancel??"",
                         style: TextStyles.fontText14Medium(
                           AppColors.whiteColor,
                         ),
