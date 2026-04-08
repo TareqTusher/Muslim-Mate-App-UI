@@ -4,7 +4,7 @@ import 'package:muslim_mate/core/styles/text_styles.dart';
 
 class CommonModalBottomSheet {
   
-  static void show( { required BuildContext context,String? title, String?buttonText, required Widget children,IconData? icon,String? cancel}) {
+  static void show( { required BuildContext context,String? title, String?buttonText, required Widget children,IconData? icon,String? cancel,required VoidCallback onTap, VoidCallback ? titleOnTap,IconData?titleIcon, }) {
     
     showModalBottomSheet(
       
@@ -36,61 +36,31 @@ class CommonModalBottomSheet {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
+                titleIcon==null?
                 Text(
                   title??"",
                   style: TextStyles.fontText16SemiBold(
                     AppColors.blackColor,
                   ),
+                ):Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  
+                  children: [
+
+                   Text(
+                  title??"",
+                  style: TextStyles.fontText16SemiBold(
+                    AppColors.blackColor,
+                  ),
                 ),
+                InkWell(
+                  
+                  onTap:titleOnTap,
+                  child: Icon(titleIcon,color: Colors.red,size: 24,))
+                ],),
                 SizedBox(height: 16),
                 children,
-                // Row(
-                //   children: [
-                //     Expanded(
-                //       child: DropdownButtonFormField(
-                //         decoration: InputDecoration(
-                //           filled: true,
-                //           suffixIcon: Icon(Icons.expand_more),
-                //           fillColor: AppColors.grey100,
-                //           labelText: "Surah",
-                //           border: OutlineInputBorder(
-                //             borderRadius: BorderRadius.circular(12),
-                //             borderSide: BorderSide.none,
-                //           ),
-                //         ),
-                //         items: ["1. Surah"]
-                //             .map((e) => DropdownMenuItem(
-                //                   value: e,
-                //                   child: Text(e),
-                //                 ))
-                //             .toList(),
-                //         onChanged: (v) {},
-                //       ),
-                //     ),
-                //     SizedBox(width: 10),
-                //     Expanded(
-                //       child: DropdownButtonFormField(
-                //         decoration: InputDecoration(
-                //           filled: true,
-                //           fillColor: AppColors.grey100,
-                //           labelText: "Ayah",
-                //           suffixIcon: Icon(Icons.expand_more),
-                //           border: OutlineInputBorder(
-                //             borderSide: BorderSide.none,
-                //             borderRadius: BorderRadius.circular(12),
-                //           ),
-                //         ),
-                //         items: ["1", "2"]
-                //             .map((e) => DropdownMenuItem(
-                //                   value: e,
-                //                   child: Text(e),
-                //                 ))
-                //             .toList(),
-                //         onChanged: (v) {},
-                //       ),
-                //     ),
-                //   ],
-                // ),
+   
                 SizedBox(height: 20),
               
                 cancel==null?
@@ -98,7 +68,7 @@ class CommonModalBottomSheet {
                   width: double.infinity,
                   height: 40,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: onTap,
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
@@ -110,16 +80,20 @@ class CommonModalBottomSheet {
                       style: TextStyles.fontText14Medium(
                         AppColors.whiteColor,
                       ),
-                    ):Row(children: [
-                          Icon(icon,size: 24,color: AppColors.whiteColor,),
-                          SizedBox(width: 8,),
-                          Text(
-                      buttonText??"",
-                      style: TextStyles.fontText14Medium(
-                        AppColors.whiteColor,
-                      ),
-                    )
-                    ],),
+                    ):Center(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                            Icon(icon,size: 20,color: AppColors.whiteColor,),
+                            SizedBox(width: 8,),
+                            Text(
+                        buttonText??"",
+                        style: TextStyles.fontText14Medium(
+                          AppColors.whiteColor,
+                        ),
+                      )
+                      ],),
+                    ),
                   ),
                 ):Row(children: [
 
@@ -143,17 +117,23 @@ class CommonModalBottomSheet {
                   SizedBox(width: 16,),
                   Expanded(
                     child: ElevatedButton(
+
                       onPressed: () {},
                       style: ElevatedButton.styleFrom(
+                        foregroundColor: AppColors.whiteColor,
+                        shadowColor: AppColors.whiteColor,
                         shape: RoundedRectangleBorder(
+                          side: BorderSide(color: AppColors.primary600,width: 1),
                           borderRadius: BorderRadius.circular(30),
+                          
                         ),
-                        backgroundColor: AppColors.primary600,
+                        
+                        backgroundColor: AppColors.whiteColor,
                       ),
                       child: Text(
-                        cancel??"",
+                        cancel,
                         style: TextStyles.fontText14Medium(
-                          AppColors.whiteColor,
+                          AppColors.primary600,
                         ),
                       ),
                     ),

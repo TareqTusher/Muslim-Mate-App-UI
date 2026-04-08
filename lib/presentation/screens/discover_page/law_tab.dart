@@ -29,40 +29,42 @@ List<String>laws=[
   "70Law",
 
 ];
-    return Scaffold(
-      backgroundColor: AppColors.whiteColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              ListView.separated(
-                shrinkWrap: true,
-
-                itemBuilder: (context, index) {
-                  return SizedBox(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 12.0),
-                      child: CommonTitleAndIcons(
-                        icons: icons[index],
-                        titleText: text[index],
-                        subTitleText: laws[index],
-                        onTap: () {
-                          router.push(
-                            AppRoutesPath.lawDesription,
-                            extra: {'title': text[index], 'icon': icons[index],'laws':laws[index]},
-                          );
-                        },
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.whiteColor,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                ListView.separated(
+                  shrinkWrap: true,
+      
+                  itemBuilder: (context, index) {
+                    return SizedBox(
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 12.0),
+                        child: CommonTitleAndIcons(
+                          icons: icons[index],
+                          titleText: text[index],
+                          subTitleText: laws[index],
+                          onTap: () {
+                            router.push(
+                              AppRoutesPath.lawDesription,
+                              extra: {'title': text[index], 'icon': icons[index],'laws':laws[index]},
+                            );
+                          },
+                        ),
                       ),
-                    ),
-                  );
-                },
-                separatorBuilder: (context, index) {
-                  return Divider();
-                },
-                itemCount: text.length,
-              ),
-            ],
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Divider();
+                  },
+                  itemCount: text.length,
+                ),
+              ],
+            ),
           ),
         ),
       ),

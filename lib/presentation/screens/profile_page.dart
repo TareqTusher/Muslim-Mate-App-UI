@@ -6,10 +6,11 @@ class ProfilePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-            backgroundColor: AppColors.whiteColor,
-
-      body: Text("ProfilePage"),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.whiteColor,
+        body: Text("ProfilePage"),
+      ),
     );
   }
 }

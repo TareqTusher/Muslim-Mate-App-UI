@@ -25,30 +25,32 @@ void initState(){
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.primary600,
-        systemOverlayStyle: SystemUiOverlayStyle(
-          statusBarIconBrightness: Brightness.light,
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColors.primary600,
+          systemOverlayStyle: SystemUiOverlayStyle(
+            statusBarIconBrightness: Brightness.light,
+          ),
         ),
-      ),
-      backgroundColor: AppColors.primary600,
-      body: Center(
-        child: ClipPath(
-          clipper: HexagonClipper(),
-          child: Container(  
-            width: 300,
-            height: 350,
-            decoration: BoxDecoration(
-              
-              borderRadius: BorderRadius.circular(8),
-              color: AppColors.whiteColor,
-            ),
-            child:  Center(
-              child: Icon(
-                Icons.menu_book_outlined,
-                color: AppColors.primary600,
-                size:100,
+        backgroundColor: AppColors.primary600,
+        body: Center(
+          child: ClipPath(
+            clipper: HexagonClipper(),
+            child: Container(  
+              width: 300,
+              height: 350,
+              decoration: BoxDecoration(
+                
+                borderRadius: BorderRadius.circular(8),
+                color: AppColors.whiteColor,
+              ),
+              child:  Center(
+                child: Icon(
+                  Icons.menu_book_outlined,
+                  color: AppColors.primary600,
+                  size:100,
+                ),
               ),
             ),
           ),

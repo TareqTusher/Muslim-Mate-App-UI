@@ -22,65 +22,67 @@ class DuaTab extends StatelessWidget {
       Icons.directions_car_outlined,
       Icons.collections_bookmark_outlined,
     ];
-    return Scaffold(
-      backgroundColor: AppColors.whiteColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              ListView.separated(
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 16.0),
-                    child: InkWell(
-                      focusColor: AppColors.whiteColor,
-                      hoverColor: AppColors.whiteColor,
-                      highlightColor: AppColors.whiteColor,
-                      splashColor: AppColors.whiteColor,
-
-                      onTap: () {
-                        router.push(AppRoutesPath.familyDescription);
-                      },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Icon(
-                            icons[index],
-                            size: 30,
-                            color: AppColors.grey400,
-                          ),
-                          SizedBox(width: 8),
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                titleText[index],
-                                style: TextStyles.fontText14SemiBold(
-                                  AppColors.blackColor,
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.whiteColor,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 16.0),
+                      child: InkWell(
+                        focusColor: AppColors.whiteColor,
+                        hoverColor: AppColors.whiteColor,
+                        highlightColor: AppColors.whiteColor,
+                        splashColor: AppColors.whiteColor,
+      
+                        onTap: () {
+                          router.push(AppRoutesPath.familyDescription);
+                        },
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              icons[index],
+                              size: 30,
+                              color: AppColors.grey400,
+                            ),
+                            SizedBox(width: 8),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text(
+                                  titleText[index],
+                                  style: TextStyles.fontText14SemiBold(
+                                    AppColors.blackColor,
+                                  ),
                                 ),
-                              ),
-                              Text(
-                                "1 Dua",
-                                style: TextStyles.fontText14Regular(
-                                  AppColors.grey400,
+                                Text(
+                                  "1 Dua",
+                                  style: TextStyles.fontText14Regular(
+                                    AppColors.grey400,
+                                  ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  );
-                },
-                separatorBuilder: (context, index) {
-                  return Divider();
-                },
-                itemCount: icons.length,
-              ),
-            ],
+                    );
+                  },
+                  separatorBuilder: (context, index) {
+                    return Divider();
+                  },
+                  itemCount: icons.length,
+                ),
+              ],
+            ),
           ),
         ),
       ),

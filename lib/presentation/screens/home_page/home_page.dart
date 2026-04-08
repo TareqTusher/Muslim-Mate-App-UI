@@ -15,28 +15,30 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.whiteColor,
-     
-
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-           const TopHeaderSection(),
-
-            Padding(
-              padding: const EdgeInsets.only(top: 250),
-              child: Column(
-                children: [
-                  const LastReadSection(),
-                  const QiblaMosqueSection(),
-                  const SizedBox(height: 20),
-                  const DailyActivitySection(),
-                  const SizedBox(height: 40),
-                ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.whiteColor,
+       
+      
+        body: SingleChildScrollView(
+          child: Stack(
+            children: [
+             const TopHeaderSection(),
+      
+              Padding(
+                padding: const EdgeInsets.only(top: 250),
+                child: Column(
+                  children: [
+                    const LastReadSection(),
+                    const QiblaMosqueSection(),
+                    const SizedBox(height: 20),
+                    const DailyActivitySection(),
+                    const SizedBox(height: 40),
+                  ],
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

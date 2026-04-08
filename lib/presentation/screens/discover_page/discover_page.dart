@@ -10,28 +10,30 @@ class DiscoverPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: AppColors.whiteColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  Strings.discover,
-                  style: TextStyles.fontText20SemiBold(AppColors.blackColor),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: AppColors.whiteColor,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text(
+                    Strings.discover,
+                    style: TextStyles.fontText20SemiBold(AppColors.blackColor),
+                  ),
                 ),
-              ),
-              SizedBox(height: 12),
-              CommonHeaderContainerSection(
-                color: AppColors.primary600,
-                onTap: () {},
-              ),
-              const SizedBox(height: 12),
-              HorizontalRowSection(),
-            ],
+                SizedBox(height: 12),
+                CommonHeaderContainerSection(
+                  color: AppColors.primary600,
+                  onTap: () {},
+                ),
+                const SizedBox(height: 12),
+                HorizontalRowSection(),
+              ],
+            ),
           ),
         ),
       ),

@@ -17,52 +17,54 @@ class LawTitle extends StatelessWidget {
       "Various Types of Halal Business",
       "Characteristics of Halal and Haram Investments",
     ];
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: AppColors.whiteColor,
-        title: InkWell(
-
-          onTap: () {
-            router.push(AppRoutesPath.lawToBusiness);
-          },
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Business",
-                style: TextStyles.fontText16SemiBold(AppColors.blackColor),
-              ),
-              Text("Law", style: TextStyles.fontText14Medium(AppColors.grey500)),
-            ],
+    return SafeArea(
+      child: Scaffold(
+        appBar: AppBar(
+          backgroundColor: AppColors.whiteColor,
+          title: InkWell(
+      
+            onTap: () {
+              router.push(AppRoutesPath.lawToBusiness);
+            },
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Business",
+                  style: TextStyles.fontText16SemiBold(AppColors.blackColor),
+                ),
+                Text("Law", style: TextStyles.fontText14Medium(AppColors.grey500)),
+              ],
+            ),
+          ),
+          leading: InkWell(
+            onTap: () {
+              router.push(AppRoutesPath.lawTab);
+            },
+            child: Icon(Icons.chevron_left, size: 30, color: AppColors.grey400),
           ),
         ),
-        leading: InkWell(
-          onTap: () {
-            router.push(AppRoutesPath.lawTab);
-          },
-          child: Icon(Icons.chevron_left, size: 30, color: AppColors.grey400),
-        ),
-      ),
-      backgroundColor: AppColors.whiteColor,
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Column(
-            children: [
-              CommonHeaderContainerSection(onTap: () {}),
-              SizedBox(height: 12),
-
-              ListView.separated(
-                shrinkWrap: true,
-                itemBuilder: (context, index) {
-                  return CommonArticleListTile(text: titleText[index]);
-                },
-                separatorBuilder: (BuildContext context, int index) {
-                  return Divider();
-                },
-                itemCount: titleText.length,
-              ),
-            ],
+        backgroundColor: AppColors.whiteColor,
+        body: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              children: [
+                CommonHeaderContainerSection(onTap: () {}),
+                SizedBox(height: 12),
+      
+                ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return CommonArticleListTile(text: titleText[index]);
+                  },
+                  separatorBuilder: (BuildContext context, int index) {
+                    return Divider();
+                  },
+                  itemCount: titleText.length,
+                ),
+              ],
+            ),
           ),
         ),
       ),
