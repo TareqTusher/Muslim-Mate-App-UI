@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:muslim_mate/core/common_components/hexagon_clipper.dart';
+import 'package:muslim_mate/core/router/app_routes.dart';
+import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 
@@ -19,6 +21,7 @@ class JuzTab extends StatelessWidget {
             highlightColor: AppColors.whiteColor,
             splashColor: AppColors.whiteColor,
             onTap: () {
+              router.push(AppRoutesPath.juzTabReadSurah);
             },
             child: Row(
               children: [
@@ -45,7 +48,7 @@ class JuzTab extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "juz ${index+1}",
+                      "juz ${index + 1}",
                       style: TextStyles.fontText14Bold(AppColors.blackColor),
                     ),
                     const SizedBox(height: 4),
@@ -57,13 +60,6 @@ class JuzTab extends StatelessWidget {
                             AppColors.grey500,
                           ),
                         ),
-                        // const SizedBox(width: 12),
-                        // Text(
-                        //   "286 Ayah",
-                        //   style: TextStyles.fontText12Regular(
-                        //     AppColors.blackColor,
-                        //   ),
-                        // ),
                       ],
                     ),
                   ],
@@ -73,7 +69,7 @@ class JuzTab extends StatelessWidget {
           ),
         );
       },
-      separatorBuilder: (_, __) => const Divider(),
+      separatorBuilder: (_, _) => const Divider(),
     );
   }
 }

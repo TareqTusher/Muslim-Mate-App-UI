@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_mate/core/common_components/common_column_item.dart';
-import 'package:muslim_mate/core/common_components/common_modal_bottom_sheet.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
-import 'package:muslim_mate/presentation/widgets/quran_page/go_to_modal_bottom_sheet.dart';
 
 class AppbarTitle extends StatelessWidget {
-  const AppbarTitle({super.key});
+  const AppbarTitle({super.key, this.backGroundColor, this.iconColor, this.onTap});
+  final Color?backGroundColor,iconColor;
+  final VoidCallback? onTap;
+  
 
   @override
   Widget build(BuildContext context) {
+
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
@@ -43,9 +44,9 @@ class AppbarTitle extends StatelessWidget {
         Flexible(
           child: Container(
             height: 40,
-            width: 40,
+            width: 40,             
             decoration: BoxDecoration(
-              color: AppColors.grey100,
+              color: backGroundColor,
               borderRadius: BorderRadius.circular(100),
             ),
             child: InkWell(
@@ -53,14 +54,12 @@ class AppbarTitle extends StatelessWidget {
               focusColor: AppColors.whiteColor,
               hoverColor: AppColors.whiteColor,
               highlightColor: AppColors.whiteColor,
-              onTap: () {
-                GoTo.goToModalBottomSheet(context);
-              },
+              onTap: onTap,
 
               child: Icon(
                 Icons.menu_book_outlined,
                 size: 20,
-                color: AppColors.grey500,
+                color: iconColor,
               ),
             ),
           ),

@@ -13,6 +13,8 @@ static const lawTitle="/lawTitle";
 static const lawToBusiness="/lawToBusiness";
 static const quranPageSuraTab="/quranPageSuraTab1";
 static const suraTab="/suraTab1";
+static const quranPage="/quranPage";
+static const juzTabReadSurah="/juzTabReadSurah";
 
 }
 
@@ -31,4 +33,6 @@ static const lawTitle="lawTitle";
 static const lawToBusiness="lawToBusiness";
 static const quranPageSuraTab="quranPageSuraTab1";
 static const suraTab="suraTab1";
+static const quranPage="quranPage";
+static const juzTabReadSurah="juzTabRadSurah";
 }

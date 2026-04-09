@@ -5,6 +5,7 @@ import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 import 'package:muslim_mate/presentation/widgets/quran_page/al_fatihah_tab_section.dart';
 import 'package:muslim_mate/presentation/widgets/quran_page/appbar_title.dart';
+import 'package:muslim_mate/presentation/widgets/quran_page/go_to_modal_bottom_sheet.dart';
 
 class DetailsSurahWidget extends StatelessWidget {
   const DetailsSurahWidget({super.key});
@@ -22,11 +23,15 @@ class DetailsSurahWidget extends StatelessWidget {
             highlightColor: AppColors.whiteColor,
             focusColor: AppColors.whiteColor,
             onTap: () {
-              router.push(AppRoutesPath.suraTab);
+              router.push(AppRoutesPath.quranPage);
             },
             child: Icon(Icons.chevron_left, size: 30, color: AppColors.grey400),
           ),
-          title: AppbarTitle(),
+          title: AppbarTitle(
+            backGroundColor: AppColors.grey100,
+            iconColor: AppColors.grey400,
+            onTap: () => GoTo.goToModalBottomSheet(context),
+          ),
           bottom: TabBar(
             splashBorderRadius: BorderRadius.circular(12),
             indicatorColor: AppColors.primary600,
@@ -36,7 +41,7 @@ class DetailsSurahWidget extends StatelessWidget {
             labelStyle: TextStyles.fontText16Medium(AppColors.primary400),
             tabs: [
               Tab(text: "2.Al Barakah", height: 30),
-              Tab(text: "1.Al Fatihah"),
+              Tab(text: "1.Al Fatihah",),
             ],
           ),
         ),
@@ -44,7 +49,7 @@ class DetailsSurahWidget extends StatelessWidget {
         body: TabBarView(
           children: [
             Center(child: Text("Tab 1 Content")),
-           AlFatihahTabSection(),
+            AlFatihahTabSection(),
           ],
         ),
       ),

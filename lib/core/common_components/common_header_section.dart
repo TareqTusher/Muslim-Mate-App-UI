@@ -30,17 +30,19 @@ class CommonHeaderContainerSection extends StatelessWidget {
           ),
         ),
         SizedBox(width: 8),
-        Container(
-          width: MediaQuery.sizeOf(context).width * 0.12,
-          height: 50,
-          decoration: BoxDecoration(
-            color: color,
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: InkWell(
-            borderRadius: BorderRadius.circular(30),
-            onTap: onTap,
-            child: Icon(Icons.bookmark_outline),
+        Expanded(
+          child: Container(
+            width: MediaQuery.sizeOf(context).width * 0.12,
+            height: 50,
+            decoration: BoxDecoration(
+              color: color,
+              borderRadius: BorderRadius.circular(30),
+            ),
+            child: InkWell(
+              borderRadius: BorderRadius.circular(30),
+              onTap: onTap,
+              child: Icon(Icons.bookmark_outline),
+            ),
           ),
         ),
       ],
