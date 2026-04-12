@@ -4,6 +4,7 @@ import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 import 'package:muslim_mate/presentation/screens/quran_page/juz_tab.dart';
 import 'package:muslim_mate/presentation/screens/quran_page/last_read_tab.dart';
+import 'package:muslim_mate/presentation/screens/quran_page/surah_flow_tab.dart';
 import 'package:muslim_mate/presentation/screens/quran_page/surah_tab.dart';
 
 class ToptabselectorWidget extends StatefulWidget {
@@ -17,7 +18,7 @@ class ToptabselectorWidget extends StatefulWidget {
 class _ToptabselectorWidgetState extends State<ToptabselectorWidget> {
   int selectedIndex = 0;
 
-  final List<String> text = ["Surah", "Juz", "Last Read"];
+  final List<String> text = ["Surah", "Juz", "Last Read","Surah Flow"];
 
   late final List<Widget> pages;
 
@@ -28,6 +29,8 @@ class _ToptabselectorWidgetState extends State<ToptabselectorWidget> {
       SurahTab(),
       JuzTab(),
       LastReadTab(),
+      SurahFlowTab(),
+
     ];
   }
 
