@@ -7,7 +7,10 @@ class TextStyles {
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w400,fontSize: 12);
 
 }
+  static  TextStyle fontText12Bold (Color color){
+  return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w700,fontSize: 12);
 
+}
   static  TextStyle fontText14Regular (Color color){
   return GoogleFonts.poppins(color: color,fontWeight: FontWeight.w400,fontSize: 14);
 

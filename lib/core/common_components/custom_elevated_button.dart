@@ -3,11 +3,11 @@ import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 
 class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({super.key, this.icons, required this.text, required this.onTap,  this.color=AppColors.primary600, required this.backgroundClr,  this.height=50});
+  const CustomElevatedButton({super.key, this.icons, required this.text, required this.onTap,  this.color=AppColors.primary600, required this.backgroundClr,  this.height=50,  this.borderColor=AppColors.primary600});
   final IconData? icons;
   final String text;
   final VoidCallback onTap;
-  final Color color,backgroundClr;
+  final Color color,backgroundClr,borderColor;
   final double height;
 
 
@@ -22,7 +22,7 @@ class CustomElevatedButton extends StatelessWidget {
         decoration: BoxDecoration(
           color:backgroundClr ,
           borderRadius: BorderRadius.circular(30),
-          border: Border.all(color: AppColors.primary600),
+          border: Border.all(color: borderColor),
         ),
         child: Center(
           child: icons == null
