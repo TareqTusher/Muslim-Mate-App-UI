@@ -30,6 +30,8 @@ class Strings {
   static const String save = "Save";
   static const String prayerTime = "Prayer Time";
     static const String dailyActivity = "Daily Activity";
+        static const String getAccurate = "Get accurate prayer times based on your location";
+
   static const String arabic =
       "اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِیْنَۙ (1) الرَّحْمٰنِ الرَّحِیْمِۙ (2) مٰلِكِ یَوْمِ الدِّیْنِﭤ(3) اِیَّاكَ نَعْبُدُ وَ اِیَّاكَ نَسْتَعِیْنُﭤ(4)";
   static const String alQuran = "Al Quran";

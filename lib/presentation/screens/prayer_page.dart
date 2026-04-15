@@ -1,23 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:muslim_mate/core/common_components/custom_elevated_button.dart';
+import 'package:intl/intl.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
-import 'package:table_calendar/table_calendar.dart';
+import 'package:muslim_mate/presentation/widgets/prayer_page/prayer_activity_button.dart';
+import 'package:muslim_mate/presentation/widgets/prayer_page/table_calender.dart';
 
-class PrayerPage extends StatefulWidget {
+class PrayerPage extends StatelessWidget {
   const PrayerPage({super.key});
 
   @override
-  State<PrayerPage> createState() => _PrayerPageState();
-}
-
-class _PrayerPageState extends State<PrayerPage> {
-  DateTime focusedDay = DateTime.now();
-  DateTime? selectedDay;
-
-  @override
   Widget build(BuildContext context) {
+    List<String> title = [
+      "Imsak",
+      "Subuh",
+      "Fajr",
+      "Dzuhr",
+      "Ashr",
+      "Maghrib",
+      "Isya",
+    ];
+    List<IconData> icons = [
+      Icons.notifications_none,
+      Icons.cloud_outlined,
+      Icons.cloud_queue,
+      Icons.wb_sunny_outlined,
+      Icons.wb_twilight,
+      Icons.wb_cloudy_outlined,
+      Icons.nightlight_round,
+    ];
+
+    String formatdDate = DateFormat("hh:mm aa ").format(DateTime.now());
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
@@ -25,6 +38,7 @@ class _PrayerPageState extends State<PrayerPage> {
           child: Padding(
             padding: EdgeInsetsGeometry.all(12),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -74,46 +88,63 @@ class _PrayerPageState extends State<PrayerPage> {
                   ],
                 ),
                 SizedBox(height: 12),
-                TableCalendar(
-                  //locale: 'ar',
-                  headerStyle: const HeaderStyle(formatButtonVisible: false),
-                  firstDay: DateTime.utc(1998, 1, 1),
-                  lastDay: DateTime.utc(2026, 12, 31),
-                  focusedDay: focusedDay,
-                  selectedDayPredicate: (day) => isSameDay(selectedDay, day),
-                  onDaySelected: (selected, focused) {
-                    setState(() {
-                      selectedDay = selected;
-                      focusedDay = focused;
-                    });
-                  },
-                  calendarStyle: CalendarStyle(),
-                ),
+                TableCalenderSection(),
 
                 SizedBox(height: 12),
-                Row(
-                  children: [
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: Strings.prayerTime,
-                        color: AppColors.whiteColor,
-                        onTap: () {},
-                        backgroundClr: AppColors.primary600,
-                        icons: Icons.alarm,
-                        
-                      ),
-                    ),
-                    SizedBox(width: 16),
-                    Expanded(
-                      child: CustomElevatedButton(
-                        text: Strings.dailyActivity,
-                        onTap: () {},
-                        backgroundClr: AppColors.primary600,
-                        icons: Icons.alarm,
-                        color: AppColors.blackColor,
-                      ),
-                    ),
-                  ],
+                PrayerActivityButton(),
+                SizedBox(height: 12),
+                Text(
+                  Strings.prayerTime,
+                  style: TextStyles.fontText14Medium(AppColors.blackColor),
+                ),
+                SizedBox(height: 12),
+                Text(
+                  Strings.getAccurate,
+                  style: TextStyles.fontText14Regular(AppColors.grey500),
+                ),
+                SizedBox(height: 12),
+                ListView.separated(
+                  shrinkWrap: true,
+                  itemBuilder: (context, index) {
+                    return Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Wrap(
+                          children: [
+                            Icon(icons[index]),
+                            SizedBox(width: 8),
+
+                            Text(
+                              title[index],
+                              style: TextStyles.fontText14Medium(
+                                AppColors.blackColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                        Wrap(
+                          children: [
+                            Text(
+                              formatdDate,
+                              style: TextStyles.fontText12Regular(
+                                AppColors.grey600,
+                              ),
+                            ),
+                            SizedBox(width: 8),
+                            Icon(
+                              Icons.volume_up,
+                              color: AppColors.primary500,
+                              size: 20,
+                            ),
+                          ],
+                        ),
+                      ],
+                    );
+                  },
+                  separatorBuilder: (_, _) {
+                    return Divider();
+                  },
+                  itemCount: title.length,
                 ),
               ],
             ),
