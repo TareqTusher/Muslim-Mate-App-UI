@@ -3,6 +3,8 @@ class Strings {
   static const String welcome = "Welcome to Muslim Mate";
   static const String loginGoogle = "Login with Google";
   static const String home = "Home";
+    static const String general = "General";
+
   static const String discover = "Discover";
   static const String quran = "Quran";
   static const String prayer = "Prayer";

@@ -22,7 +22,7 @@ class DuaTab extends StatelessWidget {
       Icons.directions_car_outlined,
       Icons.collections_bookmark_outlined,
     ];
-    return SafeArea(
+    return SafeArea (
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
         body: SingleChildScrollView(
@@ -89,3 +89,4 @@ class DuaTab extends StatelessWidget {
     );
   }
 }
+ 
