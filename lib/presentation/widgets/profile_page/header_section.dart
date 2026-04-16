@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_mate/core/router/app_routes.dart';
+import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 
@@ -27,7 +29,6 @@ class HeaderSection extends StatelessWidget {
                   style: TextStyles.fontText14Medium(AppColors.blackColor),
                 ),
                 Container(
-                  //width: 120,
                   decoration: BoxDecoration(
                     color: AppColors.primary100,
                     borderRadius: BorderRadius.circular(30),
@@ -74,7 +75,11 @@ class HeaderSection extends StatelessWidget {
           ],
         ),
 
-        Icon(Icons.edit_note_outlined, size: 24, color: AppColors.grey600),
+        InkWell(
+          onTap: () {
+            router.push(AppRoutesPath.editProfile);
+          },
+          child: Icon(Icons.edit_note_outlined, size: 24, color: AppColors.grey600)),
       ],
     );
   }

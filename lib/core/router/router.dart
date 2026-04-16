@@ -11,9 +11,14 @@ import 'package:muslim_mate/presentation/screens/discover_page/law_tab.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/law_title.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/law_to_business.dart';
 import 'package:muslim_mate/presentation/screens/login_page.dart';
+import 'package:muslim_mate/presentation/screens/prayer_page/profile_page/nearest_mosque.dart';
+import 'package:muslim_mate/presentation/screens/prayer_page/profile_page/profile_page.dart';
+import 'package:muslim_mate/presentation/screens/prayer_page/profile_page/qibla_time.dart';
+import 'package:muslim_mate/presentation/screens/prayer_page/profile_page/settings_page.dart';
 import 'package:muslim_mate/presentation/screens/quran_page/quran_page.dart';
 import 'package:muslim_mate/presentation/screens/quran_page/surah_tab.dart';
 import 'package:muslim_mate/presentation/screens/splash_screen.dart';
+import 'package:muslim_mate/presentation/screens/prayer_page/profile_page/edit_profile_page.dart';
 import 'package:muslim_mate/presentation/widgets/quran_page/details_surah.dart';
 import 'package:muslim_mate/presentation/widgets/quran_page/juz_tab_read_surah.dart';
 
@@ -134,12 +139,53 @@ GoRouter router = GoRouter(
           NoTransitionPage(child: QuranPage()),
     ),
 
+      GoRoute(
+      path: AppRoutesPath.editProfile,
+
+      name: AppRoutesName.editProfile,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: EditProfile()),
+    ),
+
     GoRoute(
       path: AppRoutesPath.juzTabReadSurah,
 
       name: AppRoutesName.juzTabReadSurah,
       pageBuilder: (context, state) =>
           NoTransitionPage(child: JuzTabReadSurah()),
+    ),
+
+    GoRoute(
+      path: AppRoutesPath.settingsPage,
+
+      name: AppRoutesName.settingsPage,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: SettingsPage()),
+    ),
+
+      GoRoute(
+      path: AppRoutesPath.profilePage,
+
+      name: AppRoutesName.profilePage,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: ProfilePage()),
+    ),
+
+       GoRoute(
+      path: AppRoutesPath.qiblaTimePage,
+
+      name: AppRoutesName.qiblaTimePage,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: QiblaTimePage()),
+    ),
+
+    
+       GoRoute(
+      path: AppRoutesPath.nearestMosque,
+
+      name: AppRoutesName.nearestMosque,
+      pageBuilder: (context, state) =>
+          NoTransitionPage(child: NearestMosque()),
     ),
   ],
 );

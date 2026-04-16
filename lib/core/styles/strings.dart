@@ -3,18 +3,31 @@ class Strings {
   static const String welcome = "Welcome to Muslim Mate";
   static const String loginGoogle = "Login with Google";
   static const String home = "Home";
-    static const String general = "General";
-
+  static const String general = "General";
+  static const String prayerSetting = "Prayer Setting";
   static const String discover = "Discover";
   static const String quran = "Quran";
   static const String prayer = "Prayer";
   static const String profile = "profile";
+  static const String editProfile = "Edit Profile";
   static const String continu = "Continue";
   static const String qibla = "Locate \nQibla";
   static const String mosque = "Find nearest \nMosque";
   static const String activityCheckList =
       "Complete the daily activity checklist";
-  static const String goToCheckList = "Go to Checklist";
+  static const String latinHelps = "Latin helps you in reading the Al Quran";
+  static const String english = "English";
+  static const String name = "Name";
+  static const String idzhar = "Idzhar";
+
+  static const String tajweedDetail = "Click to see tajweed detail";
+  static const String dr = "Dr.Mustafa Khattab";
+  static const String mishary = "Mishary Rashid Alafasy";
+  static const String hanan = "Hanan Attaki";
+  static const String logout = "Log out";
+static const String tajweed = "Tajweed";
+  static const String defaultText = "Default";
+
   static const String search = "Search";
   static const String gloryOfRamadan = "The Glory of Ramadhan";
   static const String floydMiles = "Floyd Miles";
@@ -30,10 +43,13 @@ class Strings {
   static const String travel = "Travel";
   static const String dhikr = "Dhikr";
   static const String save = "Save";
+  static const String saveChange = "Save Change";
   static const String prayerTime = "Prayer Time";
-    static const String dailyActivity = "Daily Activity";
-        static const String getAccurate = "Get accurate prayer times based on your location";
-
+  static const String dailyActivity = "Daily Activity";
+  static const String getAccurate =
+      "Get accurate prayer times based on your location";
+      static const String loreum="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged";
+static const String goToCheckList="Go to CheckList";
   static const String arabic =
       "اَلْحَمْدُ لِلّٰهِ رَبِّ الْعٰلَمِیْنَۙ (1) الرَّحْمٰنِ الرَّحِیْمِۙ (2) مٰلِكِ یَوْمِ الدِّیْنِﭤ(3) اِیَّاكَ نَعْبُدُ وَ اِیَّاكَ نَسْتَعِیْنُﭤ(4)";
   static const String alQuran = "Al Quran";

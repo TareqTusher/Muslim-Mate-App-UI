@@ -15,6 +15,12 @@ static const quranPageSuraTab="/quranPageSuraTab1";
 static const suraTab="/suraTab1";
 static const quranPage="/quranPage";
 static const juzTabReadSurah="/juzTabReadSurah";
+static const editProfile="/editProfile";
+static const settingsPage="/settingsPage";
+static const profilePage="/profilePage";
+static const qiblaTimePage="/qiblaTimePage";
+
+static const nearestMosque="/nearestMosque";
 
 }
 
@@ -35,4 +41,10 @@ static const quranPageSuraTab="quranPageSuraTab1";
 static const suraTab="suraTab1";
 static const quranPage="quranPage";
 static const juzTabReadSurah="juzTabRadSurah";
+static const editProfile="/editProfile";
+static const settingsPage="settingsPage";
+static const profilePage="profilePage";
+static const qiblaTimePage="qiblaTimePage";
+static const nearestMosque="nearestMosque";
+
 }
