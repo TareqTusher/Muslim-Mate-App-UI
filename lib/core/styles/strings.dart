@@ -19,6 +19,9 @@ class Strings {
   static const String english = "English";
   static const String name = "Name";
   static const String idzhar = "Idzhar";
+    static const String direction = "Direction";
+
+  static const String mosjidLocation="Great Mosque of Mecca is located in the holy city of Mecca, Saudi Arabia";
 
   static const String tajweedDetail = "Click to see tajweed detail";
   static const String dr = "Dr.Mustafa Khattab";

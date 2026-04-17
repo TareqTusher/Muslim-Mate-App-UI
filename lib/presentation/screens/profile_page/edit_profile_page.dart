@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_mate/core/common_components/common_appbar_leading_icon.dart';
 import 'package:muslim_mate/core/common_components/custom_elevated_button.dart';
 import 'package:muslim_mate/core/router/app_routes.dart';
 import 'package:muslim_mate/core/router/router.dart';
@@ -13,12 +14,9 @@ class EditProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: InkWell(
-          
-          onTap: () {
-            router.push(AppRoutesPath.profilePage);
-          },
-          child: Icon(Icons.chevron_left, size: 20, color: AppColors.grey500)),
+        leading: CommonAppbarLeadingIcon(onTap:(){            router.push(AppRoutesPath.profilePage);
+}),
+
         title: Text(
           Strings.editProfile,
           style: TextStyles.fontText14SemiBold(AppColors.blackColor),

@@ -4,7 +4,7 @@ import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/discover_page.dart';
 import 'package:muslim_mate/presentation/screens/home_page/home_page.dart';
 import 'package:muslim_mate/presentation/screens/prayer_page/prayer_page.dart';
-import 'package:muslim_mate/presentation/screens/prayer_page/profile_page/profile_page.dart';
+import 'package:muslim_mate/presentation/screens/profile_page/profile_page.dart';
 import 'package:muslim_mate/presentation/screens/quran_page/quran_page.dart';
 
 class CommonBottonNav extends StatefulWidget {

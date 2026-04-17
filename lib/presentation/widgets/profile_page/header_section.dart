@@ -28,6 +28,7 @@ class HeaderSection extends StatelessWidget {
                   "Tariqul",
                   style: TextStyles.fontText14Medium(AppColors.blackColor),
                 ),
+                SizedBox(height: 8,),
                 Container(
                   decoration: BoxDecoration(
                     color: AppColors.primary100,

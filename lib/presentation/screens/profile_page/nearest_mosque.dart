@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_mate/core/common_components/common_appbar_leading_icon.dart';
+import 'package:muslim_mate/core/common_components/common_card_details.dart';
+import 'package:muslim_mate/core/router/app_routes.dart';
+import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
@@ -13,10 +17,11 @@ class NearestMosque extends StatelessWidget {
         backgroundColor: AppColors.whiteColor,
         appBar: AppBar(
           backgroundColor: AppColors.whiteColor,
-          leading: InkWell(
-            onTap: () {},
-            child: Icon(Icons.chevron_left, size: 24, color: AppColors.grey600),
-          ),
+          leading: CommonAppbarLeadingIcon(onTap: () {
+            
+             router.push(AppRoutesPath.settingsPage);
+             
+              },),
           title: Text(
             "Nearest Mosque",
             style: TextStyles.fontText16Medium(AppColors.blackColor),
@@ -43,7 +48,9 @@ class NearestMosque extends StatelessWidget {
                             size: 20,
                             color: AppColors.grey400,
                           ),
-                          hintStyle: TextStyles.fontText14Regular(AppColors.grey500),
+                          hintStyle: TextStyles.fontText14Regular(
+                            AppColors.grey500,
+                          ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(30),
                             borderSide: BorderSide.none,
@@ -51,9 +58,9 @@ class NearestMosque extends StatelessWidget {
                         ),
                       ),
                     ),
-SizedBox(width: 12,),
+                    SizedBox(width: 12),
                     Expanded(
-                    flex: 1,
+                      flex: 1,
                       child: Container(
                         height: 50,
                         width: 50,
@@ -66,6 +73,8 @@ SizedBox(width: 12,),
                     ),
                   ],
                 ),
+                SizedBox(height:12),
+            CommonCardDetails()
               ],
             ),
           ),
@@ -74,3 +83,5 @@ SizedBox(width: 12,),
     );
   }
 }
+
+
