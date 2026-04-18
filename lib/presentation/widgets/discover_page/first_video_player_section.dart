@@ -1,5 +1,6 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
@@ -56,8 +57,9 @@ class _FirstVideoPlayerSectionState extends State<FirstVideoPlayerSection> {
             ),
             Row(
               children: [
-                Icon(Icons.near_me_outlined),
-                Icon(Icons.bookmark_outline, color: AppColors.primary500),
+FaIcon(FontAwesomeIcons.paperPlane,size: 16,color: AppColors.grey500,),    
+
+SizedBox(width: 8,),            Icon(Icons.bookmark_outline, color: AppColors.primary500),
               ],
             ),
           ],

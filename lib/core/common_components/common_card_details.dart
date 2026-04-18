@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/common_components/custom_elevated_button.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
@@ -63,7 +64,7 @@ mainAxisAlignment: MainAxisAlignment.spaceBetween,
               width: 120,
               child: CustomElevatedButton(text: Strings.direction, onTap: (){}, backgroundClr: AppColors.primary600,borderColor: AppColors.primary600,
               
-              color: AppColors.whiteColor,icons: Icons.send_outlined,iconColor: AppColors.whiteColor,
+              color: AppColors.whiteColor,icons: FontAwesomeIcons.telegram,iconColor: AppColors.whiteColor,
               ),
             )
         ],

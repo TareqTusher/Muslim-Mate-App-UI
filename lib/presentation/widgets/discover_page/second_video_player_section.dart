@@ -1,6 +1,7 @@
 import 'package:chewie/chewie.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
@@ -65,7 +66,12 @@ class _SecondVideoPlayerSectionState extends State<SecondVideoPlayerSection> {
             ),
             Row(
               children: [
-                Icon(Icons.near_me_outlined),
+                FaIcon(
+                  FontAwesomeIcons.paperPlane,
+                  size: 16,
+                  color: AppColors.grey500,
+                ),
+                SizedBox(width: 8),
                 Icon(Icons.bookmark_add_outlined),
               ],
             ),

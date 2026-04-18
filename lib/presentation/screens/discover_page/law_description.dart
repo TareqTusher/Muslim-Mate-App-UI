@@ -86,7 +86,7 @@ class LawDescription extends StatelessWidget {
                       
                           Wrap(
                             children: [
-                              Icon(Icons.send, size: 24, color: AppColors.grey400),
+                      Image.asset("assets/images/send.png",height: 18,width: 18,),
                               SizedBox(width: 12),
                               Icon(
                                 Icons.bookmark_rounded,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/common_components/custom_elevated_button.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
@@ -28,7 +29,7 @@ class _PrayerActivityButtonState extends State<PrayerActivityButton> {
               Expanded(
                 child: CustomElevatedButton(
                   text: Strings.prayerTime,
-                  icons: Icons.alarm,
+                  icons: FontAwesomeIcons.alarmClock,
                   iconColor:  selectedIndex == 0
                       ? AppColors.whiteColor
                       : AppColors.primary600,
@@ -49,7 +50,7 @@ class _PrayerActivityButtonState extends State<PrayerActivityButton> {
               Expanded(
                 child: CustomElevatedButton(
                   text: Strings.dailyActivity,
-                  icons: Icons.menu_book,
+                  icons: FontAwesomeIcons.alignJustify,
                   iconColor:  selectedIndex == 1
                       ? AppColors.whiteColor
                       : AppColors.primary600,

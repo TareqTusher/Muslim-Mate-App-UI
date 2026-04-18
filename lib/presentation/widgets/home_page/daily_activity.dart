@@ -46,7 +46,7 @@ class DailyActivitySection extends StatelessWidget {
             ],
           ),
 
-          activityTile("Alms", "4/10"),
+          activityTile("Alarms", "4/10"),
           activityTile("Recite the Al Quran", "8/10"),
 
           const SizedBox(height: 20),

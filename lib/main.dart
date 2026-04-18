@@ -4,6 +4,7 @@ import 'package:muslim_mate/core/router/router.dart';
 void main() {
   runApp(const MyApp());
 }
+
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
@@ -11,23 +12,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
-     routerConfig: router,
-     theme: ThemeData(
-colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown,
+      routerConfig: router,
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.brown,
 
-brightness: Brightness.light
-)
+          brightness: Brightness.light,
+        ),
+      ),
+      darkTheme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.brown,
 
-     ),
-     darkTheme:ThemeData(
-colorScheme: ColorScheme.fromSeed(seedColor: Colors.brown,
+          brightness: Brightness.dark,
+        ),
+      ),
 
-brightness: Brightness.dark
-)
-
-     ) ,
-
-     themeMode: ThemeMode.system,
+      themeMode: ThemeMode.system,
     );
   }
 }

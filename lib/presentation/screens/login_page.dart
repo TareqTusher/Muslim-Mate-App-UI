@@ -6,7 +6,7 @@ import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
-
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
 
@@ -65,7 +65,8 @@ class _LoginPageState extends State<LoginPage> {
                   SizedBox(height: 60),
                   CustomElevatedButton(
                     text: Strings.loginGoogle,
-                    icons: Icons.email,
+                    iconColor: AppColors.primary500,
+                    icons: FontAwesomeIcons.google,
                     onTap: () {
                       router.push(AppRoutesPath.homePage);
                     }, backgroundClr: AppColors.whiteColor,

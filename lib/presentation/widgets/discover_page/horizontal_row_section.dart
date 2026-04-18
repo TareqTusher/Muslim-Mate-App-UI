@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 import 'package:muslim_mate/presentation/screens/discover_page/article_tab.dart';
@@ -14,11 +15,14 @@ class HorizontalRowSection extends StatefulWidget {
 }
 
 class _HorizontalRowSectionState extends State<HorizontalRowSection> {
-  List<IconData> icons = [
-    Icons.video_call,
-    Icons.article,
-    Icons.book,
-    Icons.inbox_outlined,
+  List<FaIconData> icons = [
+FontAwesomeIcons.video,
+FontAwesomeIcons.fileLines,
+FontAwesomeIcons.newspaper,
+FontAwesomeIcons.handsPraying
+    // Icons.article,
+    // Icons.book,
+    // Icons.inbox_outlined,
   ];
 
   List<String> text = ["Video", "Article", "Dua", "Law"];
@@ -71,8 +75,8 @@ class _HorizontalRowSectionState extends State<HorizontalRowSection> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(
-                          icons[index],
+                        FaIcon(
+                          icons[index],size: 16,
                           color: selectedIndex == index
                               ? AppColors.whiteColor
                               : AppColors.grey400,

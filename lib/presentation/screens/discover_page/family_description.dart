@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_mate/core/common_components/common_appbar_leading_icon.dart';
 import 'package:muslim_mate/core/common_components/common_header_section.dart';
 import 'package:muslim_mate/core/router/app_routes.dart';
 import 'package:muslim_mate/core/router/router.dart';
@@ -14,19 +15,17 @@ class FamilyDescription extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
-      
+
         appBar: AppBar(
-          leading: InkWell(
-            child: InkWell(
-              onTap: () {
-                router.push(AppRoutesPath.duaTab);
-              },
-              child: Icon(Icons.arrow_back, size: 24, color: AppColors.grey500),
-            ),
+          leading: CommonAppbarLeadingIcon(
+            onTap: () {
+              router.push(AppRoutesPath.duaTab);
+            },
           ),
+
           backgroundColor: AppColors.whiteColor,
         ),
-      
+
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(16.0),
@@ -37,7 +36,7 @@ class FamilyDescription extends StatelessWidget {
                 SizedBox(height: 12),
                 CommonHeaderContainerSection(
                   onTap: () {},
-                  color: AppColors.primary600,
+                  color: AppColors.primary500,
                 ),
                 SizedBox(height: 12),
                 Row(
@@ -47,10 +46,10 @@ class FamilyDescription extends StatelessWidget {
                       "Prayer of Both Parents",
                       style: TextStyles.fontText14Medium(AppColors.grey700),
                     ),
-      
+
                     Row(
                       children: [
-                        Icon(Icons.send, size: 20, color: AppColors.grey500),
+                      Image.asset("assets/images/send.png",height: 16,width: 16,),
                         SizedBox(width: 8),
                         Icon(
                           Icons.bookmark_rounded,

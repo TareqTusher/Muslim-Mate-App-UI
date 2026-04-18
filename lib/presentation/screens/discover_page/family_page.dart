@@ -69,11 +69,8 @@ class FamilyPage extends StatelessWidget {
                               InkWell(
                                 onTap: () {},
                       
-                                child: Icon(
-                                  Icons.send,
-                                  color: AppColors.grey400,
-                                  size: 20,
-                                ),
+                                child: Image.asset("assets/images/send.png",height: 20,width: 20,),
+
                               ),
                               SizedBox(width: 8),
                               InkWell(

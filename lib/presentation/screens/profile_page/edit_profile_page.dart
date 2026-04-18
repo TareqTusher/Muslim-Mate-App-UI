@@ -14,8 +14,11 @@ class EditProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: CommonAppbarLeadingIcon(onTap:(){            router.push(AppRoutesPath.profilePage);
-}),
+        leading: CommonAppbarLeadingIcon(
+          onTap: () {
+            router.push(AppRoutesPath.profilePage);
+          },
+        ),
 
         title: Text(
           Strings.editProfile,

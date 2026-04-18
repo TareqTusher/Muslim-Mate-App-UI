@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 
@@ -44,11 +45,11 @@ class CommonArticleCard extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       SizedBox(
-                        width: 290,
+                        width: 210,
                         child: Text(
                          title,
-                          style: TextStyles.fontText16Medium(AppColors.blackColor),
-                          maxLines: 2,
+                          style: TextStyles.fontText14Medium(AppColors.blackColor),
+                          maxLines: 2,overflow: TextOverflow.ellipsis,
                         ),
                       ),
           
@@ -60,7 +61,8 @@ class CommonArticleCard extends StatelessWidget {
                   ),
                   Row(
                     children: [
-                      Icon(Icons.send, color: AppColors.grey400, size: 20),
+                      FaIcon(FontAwesomeIcons.paperPlane, color: AppColors.grey400, size: 14),
+                      //Image.asset("assets/images/send.png",height: 16,width: 16,),
                       SizedBox(width: 8),
                       Icon(
                         Icons.bookmark_add_outlined,

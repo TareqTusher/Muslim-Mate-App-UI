@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/common_components/custom_elevated_button.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
@@ -43,7 +44,7 @@ class ProfilePage extends StatelessWidget {
                         onTap: () {},
                         backgroundClr: Colors.red,
                         borderColor: Colors.red,
-                        icons: Icons.logout,
+                        icons: FontAwesomeIcons.rightFromBracket,
                         iconColor: AppColors.whiteColor,
                         color: AppColors.whiteColor,
                       ),

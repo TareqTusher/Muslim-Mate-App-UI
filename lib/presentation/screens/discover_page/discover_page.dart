@@ -5,8 +5,15 @@ import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 import 'package:muslim_mate/presentation/widgets/discover_page/horizontal_row_section.dart';
 
-class DiscoverPage extends StatelessWidget {
+class DiscoverPage extends StatefulWidget {
   const DiscoverPage({super.key});
+
+  @override
+  State<DiscoverPage> createState() => _DiscoverPageState();
+}
+
+class _DiscoverPageState extends State<DiscoverPage> {
+  bool isBookMark = false;
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +34,15 @@ class DiscoverPage extends StatelessWidget {
                 ),
                 SizedBox(height: 12),
                 CommonHeaderContainerSection(
-                  color: AppColors.primary600,
-                  onTap: () {},
+                  iconColor: isBookMark
+                      ? AppColors.whiteColor
+                      : AppColors.grey600,
+                  color: isBookMark ? AppColors.primary500 : AppColors.grey300,
+                  onTap: () {
+                    setState(() {
+                      isBookMark = !isBookMark;
+                    });
+                  },
                 ),
                 const SizedBox(height: 12),
                 HorizontalRowSection(),

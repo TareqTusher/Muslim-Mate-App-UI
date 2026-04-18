@@ -45,13 +45,13 @@ GoRouter router = GoRouter(
       pageBuilder: (context, state) =>
           NoTransitionPage(child: CommonBottonNav()),
     ),
-    GoRoute(
-      path: AppRoutesPath.articleDesc,
+    // GoRoute(
+    //   path: AppRoutesPath.articleDesc,
 
-      name: AppRoutesName.articleDesc,
-      pageBuilder: (context, state) =>
-          NoTransitionPage(child: ArticleDescription()),
-    ),
+    //   name: AppRoutesName.articleDesc,
+    //   pageBuilder: (context, state) =>
+    //       NoTransitionPage(child: ArticleDescription()),
+    // ),
     GoRoute(
       path: AppRoutesPath.familyPage,
 

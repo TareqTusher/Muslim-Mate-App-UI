@@ -46,6 +46,8 @@ dependencies:
   flutter_qiblah: ^3.2.0
   geolocator: ^14.0.2
   permission_handler: ^12.0.1
+  font_awesome_flutter: ^11.0.0
+  step_progress_indicator: ^1.0.2
 
 dev_dependencies:
   flutter_test:

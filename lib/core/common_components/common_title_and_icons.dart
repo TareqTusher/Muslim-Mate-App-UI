@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 
@@ -8,7 +9,7 @@ class CommonTitleAndIcons extends StatelessWidget {
     required this.icons,
     required this.titleText, required this.subTitleText, required this.onTap,
   });
-  final IconData icons;
+  final FaIconData icons;
   final String titleText;
   final String subTitleText;
 final VoidCallback onTap;
@@ -23,7 +24,7 @@ splashColor: AppColors.whiteColor,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Icon(icons, size: 30, color: AppColors.grey400),
+          FaIcon(icons, size: 24, color: AppColors.grey400),
           SizedBox(width: 8),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
