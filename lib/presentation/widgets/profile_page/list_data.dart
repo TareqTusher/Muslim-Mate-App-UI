@@ -25,7 +25,7 @@ class _ListDataState extends State<ListData> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical:  8.0),
+      padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -33,7 +33,7 @@ class _ListDataState extends State<ListData> {
             children: [
               Icon(widget.icon, size: 20, color: AppColors.grey600),
               SizedBox(width: 8),
-      
+
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -49,7 +49,7 @@ class _ListDataState extends State<ListData> {
               ),
             ],
           ),
-      
+
           widget.showSwitch
               ? Row(
                   children: [
@@ -57,7 +57,12 @@ class _ListDataState extends State<ListData> {
                     Transform.scale(
                       scale: 0.8,
                       child: Switch(
-                        splashRadius: 12,
+                        activeTrackColor: AppColors.primary600,
+                        activeThumbColor: AppColors.whiteColor,
+                        inactiveTrackColor: AppColors.grey400,
+                        inactiveThumbColor: AppColors.whiteColor,
+
+                        splashRadius: 1,
                         value: isEnable,
                         onChanged: (v) {
                           setState(() {

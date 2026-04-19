@@ -18,8 +18,6 @@ class _HomePageState extends State<HomePage> {
     return SafeArea(
       child: Scaffold(
         backgroundColor: AppColors.whiteColor,
-       
-      
         body: SingleChildScrollView(
           child: Stack(
             children: [

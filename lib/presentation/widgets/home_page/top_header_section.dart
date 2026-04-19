@@ -1,33 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
+import 'package:muslim_mate/data/controller/home_page_controller/home_page_notifier.dart';
 
-class TopHeaderSection extends StatefulWidget {
-  const TopHeaderSection({super.key});
+// ignore: must_be_immutable
+class TopHeaderSection extends ConsumerWidget {
+   TopHeaderSection({super.key});
 
-  @override
-  State<TopHeaderSection> createState() => _TopHeaderSectionState();
-}
-
-class _TopHeaderSectionState extends State<TopHeaderSection> {
   TimeOfDay? selectedTime;
 
-  Future<void> pickTime() async {
-    TimeOfDay? time = await showTimePicker(
-      context: context,
-      initialTime: TimeOfDay.now(),
-    );
-
-    if (time != null) {
-      setState(() {
-        selectedTime = time;
-      });
-    }
-  }
-
   @override
-  Widget build(BuildContext context) {
-  
+  Widget build(BuildContext context,WidgetRef ref) {
+    final notifier=ref.read(homePageProvider.notifier);
+      final provider=ref.watch(homePageProvider.notifier);
+
 
   return SizedBox(
     height: 300,

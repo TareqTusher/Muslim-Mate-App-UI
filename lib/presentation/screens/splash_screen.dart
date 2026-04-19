@@ -1,30 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:muslim_mate/core/router/app_routes.dart';
-import 'package:muslim_mate/core/router/router.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/common_components/hexagon_clipper.dart';
-
-class SplashScreen extends StatefulWidget {
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:muslim_mate/data/controller/splash_screen_controller.dart';
+class SplashScreen extends ConsumerWidget {
   const SplashScreen({super.key});
 
-  @override
-  State<SplashScreen> createState() => _SplashScreenState();
-}
 
-class _SplashScreenState extends State<SplashScreen> {
-void nextPage(){
-  Future.delayed(Duration(seconds: 1,),()=>router.push(AppRoutesPath.logInPage));
-}
-
-@override
-void initState(){
-  nextPage();
-  super.initState();
-}
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context,WidgetRef ref) {
+    ref.watch(splashScreenProvider);
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
