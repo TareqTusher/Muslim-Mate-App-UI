@@ -3,12 +3,13 @@ import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 class CustomElevatedButton extends StatelessWidget {
-  const CustomElevatedButton({super.key, this.icons, required this.text, required this.onTap,  this.color=AppColors.primary600, required this.backgroundClr,  this.height=50,  this.borderColor=AppColors.primary600,this.iconColor=AppColors.whiteColor});
+  const CustomElevatedButton({super.key, this.icons, required this.text, required this.onTap,  this.color=AppColors.primary600, required this.backgroundClr,  this.height=50,  this.borderColor=AppColors.primary600,this.iconColor=AppColors.whiteColor,  this.size});
   final FaIconData? icons;
   final String text;
   final VoidCallback onTap;
   final Color color,backgroundClr,borderColor,iconColor;
   final double height;
+  final double? size;
 
 
   @override
@@ -30,7 +31,7 @@ class CustomElevatedButton extends StatelessWidget {
                   text,
                   style: TextStyles.fontText14Medium(
                     color,
-                  ),
+                  ).copyWith(fontSize:size ),
                 )
               : Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +39,7 @@ class CustomElevatedButton extends StatelessWidget {
                   
                   FaIcon(icons,size:16, color: iconColor,), SizedBox(width: 8), Text(text,style: TextStyles.fontText14Medium(
                     color,
-                  ).copyWith(fontWeight: FontWeight.bold),)]),
+                  ).copyWith(fontWeight: FontWeight.bold),),]),
         ),
       ),
     );

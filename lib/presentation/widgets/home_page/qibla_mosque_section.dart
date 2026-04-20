@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:muslim_mate/core/common_components/hexagon_clipper.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 
@@ -13,7 +14,7 @@ class QiblaMosqueSection extends StatelessWidget {
       decoration: BoxDecoration(
         color: AppColors.whiteColor,
         borderRadius: BorderRadius.circular(16),
-        border: Border.all(color:AppColors.grey300,width: 0.5 )
+        border: Border.all(color: AppColors.grey300, width: 0.5),
       ),
 
       child: Row(
@@ -21,13 +22,28 @@ class QiblaMosqueSection extends StatelessWidget {
         children: [
           Expanded(
             child: Padding(
-              padding: const EdgeInsets.only(right:  12.0),
+              padding: const EdgeInsets.only(right: 12.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              
+
                 children: [
                   Text(Strings.qibla),
-                  Icon(Icons.explore, color: Colors.teal),
+
+                  ClipPath(
+                    clipper: HexagonClipper(),
+                    child: Container(
+                      width: 26,
+                      height: 30,
+                      color: AppColors.primary600,
+                      child: Center(
+                        child: Icon(
+                          Icons.explore,
+                          color: AppColors.whiteColor,
+                          size: 16,
+                        ),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
@@ -40,7 +56,21 @@ class QiblaMosqueSection extends StatelessWidget {
               children: [
                 SizedBox(width: 8),
                 Text(Strings.mosque),
-                Icon(Icons.location_on, color: Colors.teal),
+                ClipPath(
+                  clipper: HexagonClipper(),
+                  child: Container(
+                    width: 26,
+                    height: 30,
+                    color: AppColors.primary600,
+                    child: Center(
+                      child: Icon(
+                        Icons.location_on,
+                        color: AppColors.whiteColor,
+                        size: 16,
+                      ),
+                    ),
+                  ),
+                ),
               ],
             ),
           ),

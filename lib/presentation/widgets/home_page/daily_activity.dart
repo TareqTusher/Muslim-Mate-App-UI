@@ -3,6 +3,7 @@ import 'package:muslim_mate/core/common_components/custom_elevated_button.dart';
 import 'package:muslim_mate/core/styles/colors.dart';
 import 'package:muslim_mate/core/styles/strings.dart';
 import 'package:muslim_mate/core/styles/text_styles.dart';
+import 'package:muslim_mate/presentation/widgets/home_page/activity_title.dart';
 
 class DailyActivitySection extends StatelessWidget {
   const DailyActivitySection({super.key});
@@ -32,55 +33,30 @@ class DailyActivitySection extends StatelessWidget {
               ),
               Container(
                 alignment: Alignment.center,
-                height: 30,
-                width: 60,
+                height: 24,
+                width: 40,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(30),
-                  color: Colors.brown,
+                  color: Colors.deepOrangeAccent,
                 ),
                 child: Text(
                   "50%",
-                  style: TextStyles.fontText14Medium(AppColors.whiteColor),
+                  style: TextStyles.fontText12Regular(AppColors.whiteColor),
                 ),
               ),
             ],
           ),
 
-          activityTile("Alarms", "4/10"),
-          activityTile("Recite the Al Quran", "8/10"),
+          ActivityTitle(title: "Alarms",progress: "4/10",),
+          ActivityTitle(title:  "Recite the Al Quran",progress:  "8/10"),
 
           const SizedBox(height: 20),
 
-          CustomElevatedButton(height: 50, text: Strings.goToCheckList, onTap: (){}, backgroundClr: AppColors.primary600,color: AppColors.whiteColor,),
+          CustomElevatedButton(height: 44, text: Strings.goToCheckList, onTap: (){}, backgroundClr: AppColors.primary600,color: AppColors.whiteColor,),
         ],
       ),
     );
   }
 
-  Widget activityTile(String title, String progress) {
-    return Container(
-      margin: const EdgeInsets.only(top: 10),
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        color: AppColors.whiteColor,
-        borderRadius: BorderRadius.circular(14),
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          Text(title),
 
-          Row(
-            children: [
-              Text(progress),
-
-              const SizedBox(width: 8),
-
-              const Icon(Icons.radio_button_unchecked),
-            ],
-          ),
-        ],
-      ),
-    );
-  }
 }

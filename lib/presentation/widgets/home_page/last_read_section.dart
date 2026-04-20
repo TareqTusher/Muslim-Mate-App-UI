@@ -47,11 +47,10 @@ class LastReadSection extends StatelessWidget {
 
           SizedBox(
             height: 30,
-            width: 100,
-
+            width: 80,
             child: CustomElevatedButton(
+              size: 12,
               text: Strings.continu,
-
               color: AppColors.primary50,
               onTap: () {},
               backgroundClr: AppColors.primary600,

@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
         body: SingleChildScrollView(
           child: Stack(
             children: [
-             const TopHeaderSection(),
+              TopHeaderSection(),
       
               Padding(
                 padding: const EdgeInsets.only(top: 250),
@@ -31,7 +31,7 @@ class _HomePageState extends State<HomePage> {
                     const QiblaMosqueSection(),
                     const SizedBox(height: 20),
                     const DailyActivitySection(),
-                    const SizedBox(height: 40),
+                    //const SizedBox(height: 40),
                   ],
                 ),
               ),
